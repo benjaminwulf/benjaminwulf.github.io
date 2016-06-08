@@ -1,0 +1,13 @@
+<div class="sidebar-wrapper">
+	<h4 class="cat-header">Posts by Category</h4>
+	<hr>
+	<ul class="sidebar">
+	    <li{% if page.url == '/' %} class="active"{% endif %}><a href="/">All Posts</a></li>
+	    <li{% if page.url contains 'agile_content' %} class="active"{% endif %}><a href="/agile_content">Agile Content</a></li>
+	    <li{% if page.url contains 'markdown' %} class="active"{% endif %}><a href="/markdown">Markdown</a></li>
+	    <li{% if page.url contains 'using_beegit' %} class="active"{% endif %}><a href="/using_wulf">Using WULF</a></li>
+	    <li{% if page.url contains 'new_features' %} class="active"{% endif %}><a href="/new_features">New Features</a></li>
+	    <li{% if page.url contains 'buzz' %} class="active"{% endif %}><a href="/buzz">Buzz</a></li>
+	</ul>
+	<hr>
+</div>

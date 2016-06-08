@@ -1,0 +1,2706 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AWS Tools for Windows PowerShell</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="canonical" href="http://wulf.io/powershell/2016/06/07/aws-tools-powershell-cmdlet-help/">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- List Builder 
+    <script src="//load.sumome.com/" data-sumo-site-id="7f08bce40a2de9f4d0499fa1782a8d0257594fdeff4df199d91d54ce7eb230c7" async="async"></script>
+    -->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <!--
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-47215911-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+    -->
+</head>
+
+    <body>
+      <nav class="navbar navbar-inverse navbar-static-top site-header" role="navigation">
+    <div class="container">
+      <div>
+        <div class="col-md-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <h1><font color="#ffffff">WULF</font></h1>
+              </a>
+          </div>
+          <div class="navbar-collapse collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/fiction">Fiction</a></li>
+                <li><a href="/nonfiction">Nonfiction</a></li>
+                <li><a href="/about">About</a></li>
+                <li>
+                    <a href="http://www.amazon.com/Shell-Gaming-Dominion-Benjamin-Wulf-ebook/dp/B013JG8OL8/ref=sr_1_1?ie=UTF8&qid=1439779089&sr=8-1&keywords=shell+gaming+dominion" target="_blank" class="purchase-shell-gaming-dominion">Purchase Novel</a>
+                </li>
+             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+            <div class="container-fluid image-header" style="background-image: url('');">
+  <div class="row">
+    <div class="image-header-overlay">
+      <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+          <h1>AWS Tools for Windows PowerShell</h1>
+          
+            <div class="post-author-image-header">
+              <img src="https://secure.gravatar.com/avatar/7d0da19393b3b5dff39fbb5f53b21040">
+            </div>
+            <span class="post-metadata">
+              
+                 by Benjamin W Wulf
+            
+            </span>
+            <span class="post-publish-date">Jun 7, 2016</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="col-md-8 col-md-offset-2 post-content">
+      <div class="post-wrapper">
+        <header class="post-header">
+          
+            
+            <div class="social-share">
+              <div class="share">Share this post</div>
+                <a class="twitter" id="social-twitter"  href="https://twitter.com/intent/tweet?text=AWS Tools for Windows PowerShell&url=http://wulf.io/powershell/2016/06/07/aws-tools-powershell-cmdlet-help/&via=benjiwulf&hashtags=" onclick="window.open(this.href, 'child', 'scrollbars,width=650,height=500'); return false" title="Share this post on Twitter"><i class="fa fa-twitter"></i></a>
+                <a class="facebook" id="social-facebook" href="https://www.facebook.com/sharer/sharer.php?t=AWS Tools for Windows PowerShell&u=http://wulf.io/powershell/2016/06/07/aws-tools-powershell-cmdlet-help/" onclick="window.open(this.href, 'child', 'scrollbars,width=650,height=500'); return false" title="Share this post on Facebook"><i class="fa fa-facebook"></i></a>
+                <a class="google" id="social-google" href="https://plus.google.com/share?url=http://wulf.io/powershell/2016/06/07/aws-tools-powershell-cmdlet-help/" onclick="window.open(this.href, 'child', 'scrollbars,width=650,height=600'); return false" title="Share this post on Google Plus"><i class="fa fa-google-plus"></i></a>
+                <a class="linkedin" id="social-linkedin" href="http://www.linkedin.com/shareArticle?mini=true&title=AWS Tools for Windows PowerShell&url=http://wulf.io/powershell/2016/06/07/aws-tools-powershell-cmdlet-help/&source=http%3a%2f%2fzhangwenli.com" onclick="window.open(this.href, 'child', 'scrollbars,width=650,height=600'); return false" title="Share this post on LinkedIn"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </header>
+        <article class="post-content">
+          <div class="post-wrapper-content">
+        	<h1 id="aws-tools-for-windowspowershell">AWS Tools for WindowsPowerShell</h1>
+<p><code>
+Get-Help *aws* | Select-Object name,synopsis | fl
+</code></p>
+
+<p><code>
+Get-Help *aws* | Select-Object name,synopsis | ConvertTo-HTML | Out-File $Path
+</code></p>
+
+<html>
+<head>
+<title>AWS Tools for WindowsPowerShell</title>
+</head><body>
+<table>
+<colgroup><col /><col /></colgroup>
+<tr><th>Name</th><th>Synopsis</th></tr>
+<tr><td><a href="#psAdd-AWSLoggingListener">Add-AWSLoggingListener</a></td><td>Adds a listener to aws service calls and enable logging.</td></tr>
+<tr><td><a href="#psClear-AWSCredentials">Clear-AWSCredentials</a></td><td>Clears the set of AWS credentials currently set as default in the shell or, if supplied with a name, deletes the set of credentials associated with the supplied name from the local credentials store.</td></tr>
+<tr><td><a href="#psClear-AWSDefaults">Clear-AWSDefaults</a></td><td>Clears the persisted credentials associated with the credential profile names &#39;default&#39; and &#39;AWS PS Default&#39;, plus any credentials and region data currently set in the session&#39;s shell variables. To clear the stored default credentials only, use the -SkipShell parameter. To affect the current shell only, use the -SkipProfileStore parameter.</td></tr>
+<tr><td><a href="#psClear-AWSHistory">Clear-AWSHistory</a></td><td>Clears the contents of the AWS cmdlet history buffer ($AWSHistory) in the current shell.</td></tr>
+<tr><td><a href="#psClear-AWSProxy">Clear-AWSProxy</a></td><td>Clears AWS default proxy for the shell. Subsequent AWS cmdlet invocations will not use a proxy.</td></tr>
+<tr><td><a href="#psClear-DefaultAWSRegion">Clear-DefaultAWSRegion</a></td><td>Clears any default AWS region set in the shell variable $StoredAWSRegion.</td></tr>
+<tr><td><a href="#psDisable-AWSMetricsLogging">Disable-AWSMetricsLogging</a></td><td>Disable logging of metrics data for AWS service requests.</td></tr>
+<tr><td><a href="#psEnable-AWSMetricsLogging">Enable-AWSMetricsLogging</a></td><td>Enable logging of metrics data for AWS service requests.</td></tr>
+<tr><td><a href="#psGet-AWSCmdletName">Get-AWSCmdletName</a></td><td>Searches for cmdlets that invoke a Amazon Web Services service operation, map to an AWS CLI command, or lists all cmdlets that belong to a service identified by one or more words in its name or its cmdlet noun prefix.</td></tr>
+<tr><td><a href="#psGet-AWSCredentials">Get-AWSCredentials</a></td><td>Returns an AWSCredentials object initialized with from either credentials currently set as default in the shell or saved and associated with the supplied name from the local credential store. Optionally the cmdlet can list the names of all sets of credentials held in the store.</td></tr>
+<tr><td><a href="#psGet-AWSPowerShellVersion">Get-AWSPowerShellVersion</a></td><td>Displays version and copyright information for the AWS Tools for Windows PowerShell to the shell. If the ListServices switch is specifiedthe services and their API versions supported by this module are also displayed.</td></tr>
+<tr><td><a href="#psGet-AWSPublicIpAddressRange">Get-AWSPublicIpAddressRange</a></td><td>Returns the public IP address range data for Amazon Web Services. Each address range instance contains the service key, host region and IP address range (in CIDR notation).</td></tr>
+<tr><td><a href="#psGet-AWSRegion">Get-AWSRegion</a></td><td>Returns the set of available AWS regions.</td></tr>
+<tr><td><a href="#psGet-DefaultAWSRegion">Get-DefaultAWSRegion</a></td><td>Returns the current default AWS region for this shell, if any, as held in the shell variable $StoredAWSRegion.</td></tr>
+<tr><td><a href="#psInitialize-AWSDefaults">Initialize-AWSDefaults</a></td><td>Creates or updates the credential profile named &#39;default&#39; using supplied keys, existing credentials or profile, or EC2 metadata. The profile and a default region is then set active in the current shell.</td></tr>
+<tr><td><a href="#psNew-AWSCredentials">New-AWSCredentials</a></td><td>Returns a populated AWSCredentials instance.</td></tr>
+<tr><td><a href="#psRemove-AWSLoggingListener">Remove-AWSLoggingListener</a></td><td>Removes a logger from the specified source (e.g. &#39;Amazon&#39;, or &#39;Amazon.S3&#39;) by name.</td></tr>
+<tr><td><a href="#psSet-AWSCredentials">Set-AWSCredentials</a></td><td>Saves AWS credentials to persistent store (-StoreAs) or temporarily for the shell using shell variable $StoredAWSCredentials.Note that temporary session-based credentials cannot be saved to the persistent store.</td></tr>
+<tr><td><a href="#psSet-AWSHistoryConfiguration">Set-AWSHistoryConfiguration</a></td><td>Configures how the $AWSHistory session variable records AWS cmdlet processing.</td></tr>
+<tr><td><a href="#psSet-AWSProxy">Set-AWSProxy</a></td><td>Sets AWS default proxy for the shell. Subsequent AWS cmdlet invocations will use the configured proxy.</td></tr>
+<tr><td><a href="#psSet-AWSResponseLogging">Set-AWSResponseLogging</a></td><td>Modify response logging options for AWS service requests.</td></tr>
+<tr><td><a href="#psSet-AWSSamlEndpoint">Set-AWSSamlEndpoint</a></td><td>Creates or updates an endpoint settings definition for use with SAML role profiles.</td></tr>
+<tr><td><a href="#psSet-AWSSamlRoleProfile">Set-AWSSamlRoleProfile</a></td><td>Creates or updates one or more role profiles for use with authentication against a SAML-based federated identity provider to obtain temporary role-based AWS credentials.</td></tr>
+<tr><td><a href="#psSet-DefaultAWSRegion">Set-DefaultAWSRegion</a></td><td>Sets a default AWS region system name (e.g. us-west-2, eu-west-1 etc) into the shell variable $StoredAWSRegion.</td></tr>
+</table>
+</body></html>
+
+<p><a name="psAdd-AWSLoggingListener"></a></p>
+
+<p>NAME
+    Add-AWSLoggingListener</p>
+
+<p>SYNOPSIS
+    Adds a listener to aws service calls and enable logging.</p>
+
+<p>SYNTAX
+    Add-AWSLoggingListener [-Name] <system.string> [-TraceListener] <system.diagnostics.tracelistener> [-LogFilePath] 
+    <system.string> [-Source <system.string>] [<commonparameters>]</commonparameters></system.string></system.string></system.diagnostics.tracelistener></system.string></p>
+
+<p>DESCRIPTION
+    Adds a single trace listener to the specified trace source. Given a name and file path,  creates a 
+    TextWriterTraceListener with the given name and file path, and adds it to the  listeners for the trace source. 
+    If Source is not specified, ‘Amazon’ is assumed, which represents all SDK API calls.  In the case where there are 
+    multiple listeners for multiple sources, Trace calls for an API will go to the most specific source only. For 
+    example, if one listener is added to ‘Amazon.S3’ and another on ‘Amazon’, then S3 calls will only be logged to the 
+    former listener.</p>
+
+<p>PARAMETERS
+    -LogFilePath <system.string>
+        File path to write the log to.</system.string></p>
+
+<pre><code>    Required?                    true
+    Position?                    2
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Name &lt;System.String&gt;
+    The name of the logger.
+    
+    Required?                    true
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Source &lt;System.String&gt;
+    Specify a source to log responses for. 
+    Defaults to all responses (i.e. 'Amazon'). To limit to a specific service (for example DynamoDB), use 
+    'Amazon.DynamoDB'.)
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-TraceListener &lt;System.Diagnostics.TraceListener&gt;
+    Specify a custom trace listener object.
+    
+    Required?                    true
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not produce any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Add-AWSLoggingListener -Name MyAWSLogs -LogFilePath c:\logs\aws.txt
+
+
+Description
+
+-----------
+
+Attaches a listener for the source 'Amazon', matching responses from all services for the current script or shell. 
+Log output will be written to the specified file (the folder path must exist). Multiple listeners for different 
+namespaces can be active at a time. By default only error responses are logged.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt;Add-AWSLoggingListener -Name MyS3Logs -LogFilePath c:\logs\s3.txt -Source Amazon.S3
+
+
+Description
+
+-----------
+
+Attaches a listener for the source 'Amazon.S3'. Responses matching only this namespace will be logged to the 
+specified file (the folder path must exist). Multiple listeners for different namespaces can be active at a time. 
+By default only error responses are logged.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Add-AWSLoggingListener.html&amp;
+    tocid=Add-AWSLoggingListener
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psClear-AWSCredentials">
+NAME
+    Clear-AWSCredentials</a></p>
+
+<p>SYNOPSIS
+    Clears the set of AWS credentials currently set as default in the shell or, if supplied with a name, deletes the 
+    set of credentials associated with the supplied name from the local credentials store.</p>
+
+<p>SYNTAX
+    Clear-AWSCredentials [-ProfileName <system.string>] [<commonparameters>]</commonparameters></system.string></p>
+
+<p>DESCRIPTION
+    Clears the set of AWS credentials currently set as default in the shell or, if supplied with a name, deletes the 
+    set of credentials associated with the supplied name from the local credentials store.</p>
+
+<p>PARAMETERS
+    -ProfileName <system.string>
+        The name associated with a set of credentials in the local store that are to be deleted. If not specified, the 
+        default credentials in the shell are cleared.</system.string></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Clear-AWSCredentials
+
+
+Description
+
+-----------
+
+Clears any credentials set as default in the current shell. The stored profiles are not affected.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt;Clear-AWSCredentials -ProfileName myCredentials
+
+
+Description
+
+-----------
+
+Deletes the credential profile named 'myCredentials'.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Clear-AWSCredentials.html&amp;to
+    cid=Clear-AWSCredentials
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psClear-AWSDefaults">
+NAME
+    Clear-AWSDefaults</a></p>
+
+<p>SYNOPSIS
+    Clears the persisted credentials associated with the credential profile names ‘default’ and ‘AWS PS Default’, plus 
+    any credentials and region data currently set in the session’s shell variables. To clear the stored default 
+    credentials only, use the -SkipShell parameter. To affect the current shell only, use the -SkipProfileStore 
+    parameter.</p>
+
+<p>SYNTAX
+    Clear-AWSDefaults [-SkipShell <system.management.automation.switchparameter>] [-SkipProfileStore 
+    <system.management.automation.switchparameter>] [<commonparameters>]</commonparameters></system.management.automation.switchparameter></system.management.automation.switchparameter></p>
+
+<p>DESCRIPTION
+    Clears the persisted credentials associated with the credential profile names ‘default’ and ‘AWS PS Default’, plus 
+    any credentials and region data currently set in the session’s shell variables. To clear the stored default 
+    credentials only, use the -SkipShell parameter. To affect the current shell only, use the -SkipProfileStore 
+    parameter.</p>
+
+<p>PARAMETERS
+    -SkipProfileStore <system.management.automation.switchparameter>
+        If set, the cmdlet will not clear the 'default' and 'AWS PS Default' profiles held in the credentials store.</system.management.automation.switchparameter></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-SkipShell &lt;System.Management.Automation.SwitchParameter&gt;
+    If set, the cmdlet will not clear the current shell state.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Clear-AWSDefaults.html&amp;tocid
+    =Clear-AWSDefaults
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psClear-AWSHistory">
+NAME
+    Clear-AWSHistory</a></p>
+
+<p>SYNOPSIS
+    Clears the contents of the AWS cmdlet history buffer ($AWSHistory) in the current shell.</p>
+
+<p>SYNTAX
+    Clear-AWSHistory [<commonparameters>]</commonparameters></p>
+
+<p>DESCRIPTION
+    Clears the contents of the AWS cmdlet history buffer ($AWSHistory) in the current shell.</p>
+
+<p>PARAMETERS
+    <commonparameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</commonparameters></p>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: 
+    http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Clear-AWSHistory.html&amp;tocid=Clear-AWSHistory
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psClear-AWSProxy">
+NAME
+    Clear-AWSProxy</a></p>
+
+<p>SYNOPSIS
+    Clears AWS default proxy for the shell. Subsequent AWS cmdlet invocations will not use a proxy.</p>
+
+<p>SYNTAX
+    Clear-AWSProxy [<commonparameters>]</commonparameters></p>
+
+<p>DESCRIPTION
+    Clears AWS default proxy for the shell.</p>
+
+<p>PARAMETERS
+    <commonparameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</commonparameters></p>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Clear-AWSProxy
+
+
+Description
+
+-----------
+
+This command removes proxy configuration from the current shell. Subsequent cmdlets invocations will not use a 
+proxy.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: 
+    http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Clear-AWSProxy.html&amp;tocid=Clear-AWSProxy
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psClear-DefaultAWSRegion">
+NAME
+    Clear-DefaultAWSRegion</a></p>
+
+<p>SYNOPSIS
+    Clears any default AWS region set in the shell variable $StoredAWSRegion.</p>
+
+<p>SYNTAX
+    Clear-DefaultAWSRegion [<commonparameters>]</commonparameters></p>
+
+<p>DESCRIPTION
+    Clears any default AWS region set in the shell variable $StoredAWSRegion.</p>
+
+<p>PARAMETERS
+    <commonparameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</commonparameters></p>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Clear-DefaultAWSRegion.html&amp;
+    tocid=Clear-DefaultAWSRegion
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psDisable-AWSMetricsLogging">
+NAME
+    Disable-AWSMetricsLogging</a></p>
+
+<p>SYNOPSIS
+    Disable logging of metrics data for AWS service requests.</p>
+
+<p>SYNTAX
+    Disable-AWSMetricsLogging [<commonparameters>]</commonparameters></p>
+
+<p>DESCRIPTION
+    Amazon.PowerShell.Common.DisableMetricsLoggingCmdlet</p>
+
+<p>PARAMETERS
+    <commonparameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</commonparameters></p>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not produce any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Disable-AWSMetricsLogging
+
+
+Description
+
+-----------
+
+Turns off logging of performance metrics for service calls.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Disable-AWSMetricsLogging.ht
+    ml&amp;tocid=Disable-AWSMetricsLogging
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psEnable-AWSMetricsLogging">
+NAME
+    Enable-AWSMetricsLogging</a></p>
+
+<p>SYNOPSIS
+    Enable logging of metrics data for AWS service requests.</p>
+
+<p>SYNTAX
+    Enable-AWSMetricsLogging [<commonparameters>]</commonparameters></p>
+
+<p>DESCRIPTION
+    Amazon.PowerShell.Common.EnableMetricsLoggingCmdlet</p>
+
+<p>PARAMETERS
+    <commonparameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</commonparameters></p>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not produce any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Enable-AWSMetricsLogging
+
+
+Description
+
+-----------
+
+Turns on logging of performance metrics for service calls.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Enable-AWSMetricsLogging.htm
+    l&amp;tocid=Enable-AWSMetricsLogging
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psGet-AWSCmdletName">
+NAME
+    Get-AWSCmdletName</a></p>
+
+<p>SYNOPSIS
+    Searches for cmdlets that invoke a Amazon Web Services service operation, map to an AWS CLI command, or lists all 
+    cmdlets that belong to a service identified by one or more words in its name or its cmdlet noun prefix.</p>
+
+<p>SYNTAX
+    Get-AWSCmdletName [[-ApiOperation] <system.string>] [-MatchWithRegex 
+    <system.management.automation.switchparameter>] [-Service <system.string>] -AwsCliCommand <system.string> 
+    [<commonparameters>]</commonparameters></system.string></system.string></system.management.automation.switchparameter></system.string></p>
+
+<p>DESCRIPTION
+    Returns the name of the cmdlet that invokes a named Amazon Web Services service operation, optionally restricting 
+    the scope of the search to a specific service which can be identified using one or more words from the service 
+    name or the prefix applied to the nouns of cmdlets belonging to the service. 
+    Returns the names and corresponding service operations for a specific Amazon Web Services service which can be 
+    identified using one or more words from the service name or the  prefix applied to the nouns of cmdlets belonging 
+    to the service. 
+    Returns the name of the cmdlet that is the equivalent to an AWS CLI command. In this mode a best-effort is made to 
+    extract the service and operation name data from the CLI command using known naming conventions and position rules 
+    used by the AWS CLI. 
+    If no match is made, no data is output. If the service cannot be identified, an error is displayed.</p>
+
+<p>PARAMETERS
+    -ApiOperation <system.string>
+        The name of the service operation (api) to search for. If not further restricted by service prefix or service 
+        name, all cmdlets across all services are inspected for a matching operation. 
+        By default the value supplied for this parameter is treated as a simple whole-word pattern  to match. If the 
+        -MatchWithRegex switch is set the value is used as a regular expression. In both cases the search is 
+        case-insensitive/invariant culture.</system.string></p>
+
+<pre><code>    Required?                    false
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-AwsCliCommand &lt;System.String&gt;
+    The AWS CLI command to match. For example 'aws ec2 describe-instances'.  
+    The cmdlet will make a best-effort to identify the owning service and the operation  name by parsing the 
+    command using known conventions for the AWS CLI command format. The 'aws' prefix may be omitted and any AWS 
+    CLI options (identified by the prefix characters --) are skipped when parsing the value to identify the 
+    service code and operation name elements.
+    
+    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-MatchWithRegex &lt;System.Management.Automation.SwitchParameter&gt;
+    If set, the value supplied for the ApiOperation parameter is assumed to be a regular expression. By default, 
+    the value supplied for ApiOperation is treated as a simple case-insensitive whole-word pattern to match (the 
+    cmdlet will surround the ApiOperation value with ^ and $ tokens automatically). If the switch is set no 
+    modification of the supplied value is performed.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Service &lt;System.String&gt;
+    Restricts the search to the cmdlets belonging to services that match the full or  partial term supplied to the 
+    parameter value, which can be the service prefix (for example 'EC2') or one or more terms from the service 
+    name (for example 'compute' or 'compute cloud'). 
+    When partial names are used (as opposed to a prefix code) all services  for which a match can be found are 
+    used to assist in the cmdlet results. A  regular expression can always be supplied for the parameter value. 
+    If this is the only parameter supplied to the cmdlet, the output will list all of the cmdlets belonging to the 
+    services matching the search term, together  with the corresponding service operation names.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    PSObject</p>
+
+<pre><code>    A collection of zero or more objects listing cmdlets that implement the specified operation, map to the AWS 
+    CLI command or belong to the specified service.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Get-AWSCmdletName -ApiOperation describeinstances
+
+CmdletName            ServiceOperation        ServiceName                            CmdletNounPrefix
+----------            ----------------        -----------                            ----------------
+Get-EC2Instance       DescribeInstances       Amazon Elastic Compute Cloud           EC2
+Get-OPSInstances      DescribeInstances       AWS OpsWorks                           OPS
+
+
+Description
+
+-----------
+
+Returns the names of the all cmdlets that invoke an API matching the term 'describeinstances' across all services. 
+In this example, 'Get-EC2Instance' from Amazon EC2 and Get-OPSInstances from Amazon OpsWorks are output.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt;Get-AWSCmdletName -ApiOperation describeinstances -Service ec2
+
+CmdletName            ServiceOperation        ServiceName                            CmdletNounPrefix
+----------            ----------------        -----------                            ----------------
+Get-EC2Instance       DescribeInstances       Amazon Elastic Compute Cloud           EC2
+
+
+Description
+
+-----------
+
+Returns the names of the all cmdlets that invoke an API matching the term 'describeinstances' for the Amazon EC2 
+service.In this example, 'Get-EC2Instance' is output.
+
+
+
+-------------------------- EXAMPLE 3 --------------------------
+
+PS C:\&gt;Get-AWSCmdletName -ApiOperation describeinstances -Service "compute cloud"
+
+CmdletName            ServiceOperation        ServiceName                            CmdletNounPrefix
+----------            ----------------        -----------                            ----------------
+Get-EC2Instance       DescribeInstances       Amazon Elastic Compute Cloud           EC2
+
+
+Description
+
+-----------
+
+Returns the names of the all cmdlets that invoke an API matching the term 'describeinstances' for the Amazon EC2 
+service.In this example, 'Get-EC2Instance' is output.
+
+
+
+-------------------------- EXAMPLE 4 --------------------------
+
+PS C:\&gt;Get-AWSCmdletName -ApiOperation securitygroup -MatchWithRegex
+
+CmdletName                              ServiceOperation                        ServiceName                        
+    CmdletNounPrefix
+----------                              ----------------                        -----------                        
+    ----------------
+Approve-ECCacheSecurityGroupIngress     AuthorizeCacheSecurityGroupIngress      Amazon ElastiCache                 
+    EC
+Get-ECCacheSecurityGroup                DescribeCacheSecurityGroups             Amazon ElastiCache                 
+    EC
+...
+Get-EC2SecurityGroup                    DescribeSecurityGroups                  Amazon Elastic Compute Cloud       
+    EC2
+Grant-EC2SecurityGroupEgress            AuthorizeSecurityGroupEgress            Amazon Elastic Compute Cloud       
+    EC2
+Grant-EC2SecurityGroupIngress           AuthorizeSecurityGroupIngress           Amazon Elastic Compute Cloud       
+    EC2
+...
+New-RDSDBSecurityGroup                  CreateDBSecurityGroup                   Amazon Relational Database Service 
+    RDS
+Remove-RDSDBSecurityGroup               DeleteDBSecurityGroup                   Amazon Relational Database Service 
+    RDS
+Revoke-RDSDBSecurityGroupIngress        RevokeDBSecurityGroupIngress            Amazon Relational Database Service 
+    RDS
+...
+Approve-RSClusterSecurityGroupIngress   AuthorizeClusterSecurityGroupIngress    Amazon Redshift                    
+    RS
+Get-RSClusterSecurityGroups             DescribeClusterSecurityGroups           Amazon Redshift                    
+    RS
+
+
+Description
+
+-----------
+
+Returns the names of the all cmdlets that contain the term 'securitygroup' in the operation they invoke, across 
+all services.
+
+
+
+-------------------------- EXAMPLE 5 --------------------------
+
+PS C:\&gt;Get-AWSCmdletName -ApiOperation securitygroup -MatchWithRegex -Service ec2
+
+CmdletName                          ServiceOperation                        ServiceName                            
+CmdletNounPrefix
+----------                          ----------------                        -----------                            
+----------------
+Get-EC2SecurityGroup                DescribeSecurityGroups                  Amazon Elastic Compute Cloud           
+EC2
+Grant-EC2SecurityGroupEgress        AuthorizeSecurityGroupEgress            Amazon Elastic Compute Cloud           
+EC2
+Grant-EC2SecurityGroupIngress       AuthorizeSecurityGroupIngress           Amazon Elastic Compute Cloud           
+EC2
+...
+
+
+Description
+
+-----------
+
+Returns the names of the all Amazon EC2 cmdlets that contain the term 'securitygroup' in the operation they invoke.
+
+
+
+-------------------------- EXAMPLE 6 --------------------------
+
+PS C:\&gt;Get-AWSCmdletName -ApiOperation listmetrics -Service cloudwatch
+
+CmdletName              ServiceOperation        ServiceName            CmdletNounPrefix
+----------              ----------------        -----------            ----------------
+Get-CWMetrics           ListMetrics             Amazon CloudWatch      CW
+
+
+Description
+
+-----------
+
+Returns the name of the cmdlet that invokes the Amazon CloudWatch 'ListMetrics' operation. In this example, 
+'Get-CWMetrics' is output. The same result can be obtained by using the service prefix, 'cw' as the value for the 
+-Service parameter.
+
+
+
+-------------------------- EXAMPLE 7 --------------------------
+
+PS C:\&gt;Get-AWSCmdletName -AwsCliCommand "aws ec2 describe-images"
+
+CmdletName              ServiceOperation        ServiceName                            CmdletNounPrefix
+----------              ----------------        -----------                            ----------------
+Get-EC2Image            DescribeImages          Amazon Elastic Compute Cloud           EC2
+
+
+Description
+
+-----------
+
+Returns the name of the cmdlet that performs the same operation as the specified AWS CLI command. In this example, 
+'Get-EC2Image' is output. Any options (prefixed by --) in the AWS CLI command are ignored. The initial 'aws' can 
+also be omitted. This format is useful when transcoding an AWS CLI sample to AWS PowerShell.
+
+
+
+-------------------------- EXAMPLE 8 --------------------------
+
+PS C:\&gt; Get-AWSCmdletName -Service ec2
+
+CmdletName                            ServiceOperation                       ServiceName
+----------                            ----------------                       -----------
+Add-EC2ClassicLinkVpc                 AttachClassicLinkVpc                   Amazon Elastic Compute Cloud
+Add-EC2InternetGateway                AttachInternetGateway                  Amazon Elastic Compute Cloud
+Add-EC2NetworkInterface               AttachNetworkInterface                 Amazon Elastic Compute Cloud
+...
+Get-ECSClusterDetail                  DescribeClusters                       Amazon EC2 Container Service
+Get-ECSClusters                       ListClusters                           Amazon EC2 Container Service
+Get-ECSClusterService                 ListServices                           Amazon EC2 Container Service
+...
+
+
+Description
+
+-----------
+
+Performs a search to list all cmdlets that have 'ec2' in either the service name or the cmdlet noun prefix. In 
+this example this matches Amazon Elastic Compute Cloud (search term matches noun prefix) and Amazon EC2 Container 
+Service (search term found in the name).
+
+
+
+-------------------------- EXAMPLE 9 --------------------------
+
+PS C:\&gt; Get-AWSCmdletName -Service compute
+
+CmdletName                            ServiceOperation                       ServiceName
+----------                            ----------------                       -----------
+Add-EC2ClassicLinkVpc                 AttachClassicLinkVpc                   Amazon Elastic Compute Cloud
+Add-EC2InternetGateway                AttachInternetGateway                  Amazon Elastic Compute Cloud
+Add-EC2NetworkInterface               AttachNetworkInterface                 Amazon Elastic Compute Cloud
+...
+Unregister-EC2Image                   DeregisterImage                        Amazon Elastic Compute Cloud
+Unregister-EC2PrivateIpAddress        UnassignPrivateIpAddresses             Amazon Elastic Compute Cloud
+Unregister-EC2RouteTable              DisassociateRouteTable                 Amazon Elastic Compute Cloud
+
+
+Description
+
+-----------
+
+Performs a search to list all cmdlets that have 'compute' in either the service name or the cmdlet noun prefix. In 
+this example the match is for Amazon Elastic Compute Cloud only (search term found in the name).
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AWSCmdletName.html&amp;tocid
+    =Get-AWSCmdletName
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psGet-AWSCredentials">
+NAME
+    Get-AWSCredentials</a></p>
+
+<p>SYNOPSIS
+    Returns an AWSCredentials object initialized with from either credentials currently set as default in the shell or 
+    saved and associated with the supplied name from the local credential store. Optionally the cmdlet can list the 
+    names of all sets of credentials held in the store.</p>
+
+<p>SYNTAX
+    Get-AWSCredentials [[-ProfileName] <system.string>] [[-ListProfiles] 
+    <system.management.automation.switchparameter>] [<commonparameters>]</commonparameters></system.management.automation.switchparameter></system.string></p>
+
+<p>DESCRIPTION
+    Returns an AWSCredentials object initialized with from either credentials currently set as default in the shell or 
+    saved and associated with the supplied name from the local credential store. Optionally the cmdlet can list the 
+    names of all sets of credentials held in the store.</p>
+
+<p>PARAMETERS
+    -ListProfiles <system.management.automation.switchparameter>
+        Lists the names of all credentials data sets saved in local storage</system.management.automation.switchparameter></p>
+
+<pre><code>    Required?                    false
+    Position?                    3
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-ProfileName &lt;System.String&gt;
+    The name associated with the credentials in local storage
+    
+    Required?                    false
+    Position?                    2
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    Amazon.Runtime.AWSCredentials</p>
+
+<pre><code>    Object containing a set of AWS credentials.
+
+String
+    
+ 
+    The set of names associated with saved credentials in the local store.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AWSCredentials.html&amp;toci
+    d=Get-AWSCredentials
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psGet-AWSPowerShellVersion">
+NAME
+    Get-AWSPowerShellVersion</a></p>
+
+<p>SYNOPSIS
+    Displays version and copyright information for the AWS Tools for Windows PowerShell to the shell. If the 
+    ListServices switch is specifiedthe services and their API versions supported by this module are also displayed.</p>
+
+<p>SYNTAX
+    Get-AWSPowerShellVersion [-ListServiceVersionInfo <system.management.automation.switchparameter>] 
+    [<commonparameters>]</commonparameters></system.management.automation.switchparameter></p>
+
+<p>DESCRIPTION
+    Writes version and copyright information for the AWSPowerShell integration to the shell. If the ListServices 
+    switch is specified the services and their API versions supported by this module are also displayed.</p>
+
+<p>PARAMETERS
+    -ListServiceVersionInfo <system.management.automation.switchparameter>
+        If specified the cmdlet also lists all supported AWS services and their versions.</system.management.automation.switchparameter></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    String</p>
+
+<pre><code>    Version information for the tools and optionally supported services.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AWSPowerShellVersion.htm
+    l&amp;tocid=Get-AWSPowerShellVersion
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psGet-AWSPublicIpAddressRange">
+NAME
+    Get-AWSPublicIpAddressRange</a></p>
+
+<p>SYNOPSIS
+    Returns the public IP address range data for Amazon Web Services. Each address range instance contains the service 
+    key, host region and IP address range (in CIDR notation).</p>
+
+<p>SYNTAX
+    Get-AWSPublicIpAddressRange -OutputServiceKeys <system.management.automation.switchparameter> 
+    -OutputPublicationDate <system.management.automation.switchparameter> [-ServiceKey &lt;System.String[]&gt;] [-Region 
+    &lt;System.String[]&gt;] [<commonparameters>]</commonparameters></system.management.automation.switchparameter></system.management.automation.switchparameter></p>
+
+<p>DESCRIPTION
+    Returns the collection of current public IP address ranges for Amazon Web Services. Each address  range instance 
+    contains the service key, host region and IP address range (in CIDR notation). 
+    The cmdlet can optionally emit the set of currently known service keys, perform filtering of  output by service 
+    key or region information or output the publication date and time of the current information. 
+    The information processed by this cmdlet is contained in a publicly accessible JSON-format file at 
+    https://ip-ranges.amazonaws.com/ip-ranges.json. The information in this file is generated from our internal<br />
+    system-of-record and is authoritative. You can expect it to change several times per week and should poll<br />
+    accordingly 
+    For more details on the public IP address range data for Amazon Web Services,  see 
+    http://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html.</p>
+
+<p>PARAMETERS
+    -OutputPublicationDate <system.management.automation.switchparameter>
+        If set the cmdlet emits the publication date and time of the data.</system.management.automation.switchparameter></p>
+
+<pre><code>    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-OutputServiceKeys &lt;System.Management.Automation.SwitchParameter&gt;
+    If set the cmdlet emits the collection of currently-known service keys used in the address range data.
+    
+    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Region &lt;System.String[]&gt;
+    If set, contains one or more region identifiers (e.g. "us-east-1", "global") to filter the output to. This 
+    parameter can be used in conjunction with the ServiceKey parameter to filter by region and service key.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-ServiceKey &lt;System.String[]&gt;
+    If set, contains one or more service keys to filter the output to. This parameter can be used in conjunction 
+    with the Region parameter to filter by region and service key.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    AWSPublicIpAddressRange</p>
+
+<pre><code>    A collection of AWSPublicIpAddressRange instances. This is the default output from the cmdlet.
+
+String[]
+    
+ 
+    A collection of currently-known service keys used in the address data, if the -OutputServiceKeys switch is set.
+
+DateTime
+    
+ 
+    The publication date and time if the -OutputPublicationDate switch is set.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Get-AWSPublicIpAddressRange
+
+IpPrefix                Region                Service
+--------                ------                -------
+50.19.0.0/16            us-east-1             AMAZON
+54.239.98.0/24          us-east-1             AMAZON
+...
+50.19.0.0/16            us-east-1             EC2
+75.101.128.0/17         us-east-1             EC2
+...
+205.251.192.0/21        GLOBAL                ROUTE53
+54.232.40.64/26         sa-east-1             ROUTE53_HEALTHCHECKS
+...
+54.239.192.0/19         GLOBAL                CLOUDFRONT
+204.246.176.0/20        GLOBAL                CLOUDFRONT
+...
+
+
+Description
+
+-----------
+
+Outputs all of the current IP address range objects to the pipeline.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt;Get-AWSPublicIpAddressRange -OutputServiceKeys
+
+AMAZON
+EC2
+ROUTE53
+ROUTE53_HEALTHCHECKS
+CLOUDFRONT
+
+
+Description
+
+-----------
+
+Outputs the currently used set of 'Service' keys to the pipeline.
+
+
+
+-------------------------- EXAMPLE 3 --------------------------
+
+PS C:\&gt;Get-AWSPublicIpAddressRange -OutputPublicationDate
+
+Monday, December 15, 2014 4:41:01 PM
+
+
+Description
+
+-----------
+
+Outputs the publication date of the IP address range information.
+
+
+
+-------------------------- EXAMPLE 4 --------------------------
+
+PS C:\&gt;Get-AWSPublicIpAddressRange -ServiceKey ec2
+
+
+Description
+
+-----------
+
+Filters the IP address ranges to output only those with a 'Service' value of 'EC2' to the pipeline.
+
+
+
+-------------------------- EXAMPLE 5 --------------------------
+
+PS C:\&gt;Get-AWSPublicIpAddressRange -Region us-west-2
+
+
+Description
+
+-----------
+
+Filters the IP address ranges to output only those used in the US West (Oregon) region to the pipeline.
+
+
+
+-------------------------- EXAMPLE 6 --------------------------
+
+PS C:\&gt;Get-AWSPublicIpAddressRange -ServiceKey ec2,route53_healthchecks -Region us-west-2
+
+
+Description
+
+-----------
+
+Filters the IP address ranges to output only those belonging to EC2 and CloudFront and  in the US West (Oregon) 
+region to the pipeline. Multiple values can also be specified for the -Region parameter.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AWSPublicIpAddressRange.
+    html&amp;tocid=Get-AWSPublicIpAddressRange
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psGet-AWSRegion">
+NAME
+    Get-AWSRegion</a></p>
+
+<p>SYNOPSIS
+    Returns the set of available AWS regions.</p>
+
+<p>SYNTAX
+    Get-AWSRegion [[-SystemName] <system.string>] [-IncludeChina <system.management.automation.switchparameter>] 
+    [-IncludeGovCloud <system.management.automation.switchparameter>] [-GovCloudOnly 
+    <system.management.automation.switchparameter>] [<commonparameters>]</commonparameters></system.management.automation.switchparameter></system.management.automation.switchparameter></system.management.automation.switchparameter></system.string></p>
+
+<p>DESCRIPTION
+    Returns the set of available AWS regions.</p>
+
+<p>PARAMETERS
+    -GovCloudOnly <system.management.automation.switchparameter>
+        If set the returned collection contains only the 'Gov Cloud' region(s). 
+        Default: off.</system.management.automation.switchparameter></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-IncludeChina &lt;System.Management.Automation.SwitchParameter&gt;
+    Include the China (Beijing) region in the returned collection of AWSRegion instances.  Note that use of this 
+    region requires an alternate set of credentials. 
+    This switch is ignored if the SystemName parameter is used to request a specific AWSRegion instance. To return 
+    the specific China (Beijing) region, specify a value of 'cn-north-1' for the SystemName parameter. 
+    Default: off.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-IncludeGovCloud &lt;System.Management.Automation.SwitchParameter&gt;
+    If set the returned collection includes 'Gov Cloud' region(s). 
+    Default: off.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-SystemName &lt;System.String&gt;
+    If set returns an AWSRegion instance corresponding to the specified system name (e.g. us-west-2). 
+    This parameter can also be used to return AWSRegion instances for the US GovCloud and China (Beijing) regions 
+    by specifying the relevant system name.
+    
+    Required?                    false
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    AWSRegion</p>
+
+<pre><code>    AWSRegion instance for each available region.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: 
+    http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-AWSRegion.html&amp;tocid=Get-AWSRegion
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psGet-DefaultAWSRegion">
+NAME
+    Get-DefaultAWSRegion</a></p>
+
+<p>SYNOPSIS
+    Returns the current default AWS region for this shell, if any, as held in the shell variable $StoredAWSRegion.</p>
+
+<p>SYNTAX
+    Get-DefaultAWSRegion [<commonparameters>]</commonparameters></p>
+
+<p>DESCRIPTION
+    Returns the current default AWS region for this shell, if any, as held in the shell variable $StoredAWSRegion.</p>
+
+<p>PARAMETERS
+    <commonparameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</commonparameters></p>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    AWSRegion</p>
+
+<pre><code>    AWSRegion instance mapping to the default AWS region stored in $StoredAWSRegion.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Get-DefaultAWSRegion.html&amp;to
+    cid=Get-DefaultAWSRegion
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psInitialize-AWSDefaults">
+NAME
+    Initialize-AWSDefaults</a></p>
+
+<p>SYNOPSIS
+    Creates or updates the credential profile named ‘default’ using supplied keys, existing credentials or profile, or 
+    EC2 metadata. The profile and a default region is then set active in the current shell.</p>
+
+<p>SYNTAX
+    Initialize-AWSDefaults [[-ProfileName] <system.string>] [[-ProfilesLocation] <system.string>] [[-Region] 
+    <system.object>] [-AccessKey <system.string>] [-SecretKey <system.string>] [-SessionToken <system.string>] 
+    [-Credential <amazon.runtime.awscredentials>] [-NetworkCredential <system.management.automation.pscredential>] 
+    [<commonparameters>]</commonparameters></system.management.automation.pscredential></amazon.runtime.awscredentials></system.string></system.string></system.string></system.object></system.string></system.string></p>
+
+<p>DESCRIPTION
+    Creates or updates the credential profile named ‘default’ and sets the profile, and optionally a region,  as 
+    active in the current shell. The credential data to be stored in the ‘default’ profile can be provided  from: 
+     -Supplied access and secret key parameters for AWS credentials 
+     -A pre-existing profile (an AWS credentials or SAML role profile can be specified) 
+     -A credentials object 
+     -Active credentials in the current shell (in the variable $StoredAWSCredentials) 
+     -EC2 role metadata (for instances launched with instance profiles) 
+    A default region to assume when the default profile is active is also set using the -Region parameter,   from a 
+    default region already set in the current shell or, if the cmdlet is executing on an EC2 instance, from the 
+    instance metadata. If a region setting cannot be determined from a parameter or the shell you are  prompted to 
+    select one. 
+    Note that if run on an EC2 instance and you want to select a region other than the region containing the instance 
+    you should supply the -Region parameter so that the cmdlet does not inspect EC2 instance metadata to auto-discover 
+    the region. 
+    In all cases a profile named ‘default’ will be created or updated to contain the specified credential and region 
+    data. Note that if the credential source is another profile this cmdlet effectively copies the  credential data 
+    from the source profile to the ‘default’ profile. 
+    When the cmdlet exits the active credentials can be accessed in the shell via a variable named 
+    $StoredAWSCredentials.  The active region can be found in the variable $StoredAWSRegion.</p>
+
+<p>PARAMETERS
+    -AccessKey <system.string>
+        The AWS access key for the user account. This can be a temporary access key if the corresponding session token 
+        is supplied to the -SessionToken parameter. Temporary session credentials can be set for the current shell 
+        instance only and cannot be saved to the credential store file.</system.string></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+-Credential &lt;Amazon.Runtime.AWSCredentials&gt;
+    An AWSCredentials object instance containing access and secret key information, and optionally a token for 
+    session-based credentials.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-NetworkCredential &lt;System.Management.Automation.PSCredential&gt;
+    Used with SAML-based authentication when ProfileName references a SAML role profile.  Contains the network 
+    credentials to be supplied during authentication with the  configured identity provider's endpoint. This 
+    parameter is not required if the user's default network identity can or should be used during authentication.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-ProfileName &lt;System.String&gt;
+    The user-defined name of an AWS credentials or SAML-based role profile containing credential information. The 
+    profile is expected to be found in the secure credential file shared with the AWS SDK for .NET and AWS Toolkit 
+    for Visual Studio. You can also specify the name of a profile stored in the .ini-format credential file used 
+    with  the AWS CLI and other AWS SDKs.
+    
+    Required?                    false
+    Position?                    201
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-ProfilesLocation &lt;System.String&gt;
+    Used to specify the name and location of the ini-format credential file (shared with  the AWS CLI and other 
+    AWS SDKs) when the file does not use the default name and/or  folder location. 
+    When the ini-format credential file uses the default filename ('credentials') and is  placed in the default 
+    search location ('.aws' folder in the current user's profile folder,  'C:\Users\userid') this parameter is not 
+    required. This parameter is also not required  when the profile to be used is contained in the encrypted 
+    credential file shared with the  AWS SDK for .NET and AWS Toolkit for Visual Studio. 
+    As the current folder can vary in a shell or during script execution it is advised  that you use specify a 
+    fully qualified path instead of a relative path.
+    
+    Required?                    false
+    Position?                    202
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Region &lt;System.Object&gt;
+    The system name of an AWS region or an AWSRegion instance. This governs the sendpoint that will be used when 
+    calling service operations. Note that  the AWS resources referenced in a call are usually region-specific.
+    
+    Required?                    false
+    Position?                    211
+    Default value                None
+    Accept pipeline input?       True (ByValue, ByPropertyName)
+    Accept wildcard characters?  false
+    
+-SecretKey &lt;System.String&gt;
+    The AWS secret key for the user account. This can be a temporary secret key if the corresponding session token 
+    is supplied to the -SessionToken parameter. Temporary session credentials can be set for the current shell 
+    instance only and cannot be saved to the credential store file.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+-SessionToken &lt;System.String&gt;
+    The session token if the access and secret keys are temporary session-based credentials. Temporary session 
+    credentials can be set for the current shell  instance only and cannot be saved to the credential store file.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Initialize-AWSDefaults
+
+
+Description
+
+-----------
+
+Tests to see if a profile named 'default' exists. If it does the credential and region data in the profile are 
+loaded and set as active in the current shell.
+
+If a 'default' profile does not exist and the cmdlet is running on the local workstation the user is prompted to 
+enter the AWS access and secret keys for an account, and to select a default region. If run on an Amazon EC2 
+instance the instance metadata is inspected to determine if the instance was launched with a role and if so 
+credentials are obtained from the role before prompting for a default region. The credentials and region selection 
+are then saved into a profile named 'default' and set as active in the current shell.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt;Initialize-AWSDefaults -AccessKey AKIAIOSFODNN7EXAMPLE -SecretKey wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY 
+-Region us-west-2
+
+
+Description
+
+-----------
+
+Saves the specified credential keys and default region selection to a profile named 'default'. On exit the 
+credentials and region are set as active in the current shell.
+
+
+
+-------------------------- EXAMPLE 3 --------------------------
+
+PS C:\&gt;Initialize-AWSDefaults -ProfileName myProfile -Region us-west-2
+
+
+Description
+
+-----------
+
+Loads the credential data from the profile named 'myProfile' and saves it to a profile named 'default' 
+(effectively copying credential data from one profile to another). The default profile is also updated to assume a 
+default region of 'us-west-2'. When the cmdlet exists the specified credentials and region are set active in the 
+current shell.
+
+
+
+-------------------------- EXAMPLE 4 --------------------------
+
+PS C:\&gt;Initialize-AWSDefaults -Region us-west-2
+
+
+Description
+
+-----------
+
+If a profile named 'default' exists it is updated to assume a default region of 'us-west-2'. If the profile does 
+not exist and the cmdlet is running on the local workstation the user is prompted to enter the AWS access and 
+secret keys for an account. If run on an Amazon EC2 instance the instance metadata is inspected to determine if 
+the instance was launched with a role and if so credentials are obtained from the role. A profile named 'default' 
+is then created containing the discovered or entered credentials and region, and the current shell updated to set 
+thenm active.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Initialize-AWSDefaults.html&amp;
+    tocid=Initialize-AWSDefaults
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psNew-AWSCredentials">
+NAME
+    New-AWSCredentials</a></p>
+
+<p>SYNOPSIS
+    Returns a populated AWSCredentials instance.</p>
+
+<p>SYNTAX
+    New-AWSCredentials [[-ProfileName] <system.string>] [[-ProfilesLocation] <system.string>] [-AccessKey 
+    <system.string>] [-SecretKey <system.string>] [-SessionToken <system.string>] [-Credential 
+    <amazon.runtime.awscredentials>] [-NetworkCredential <system.management.automation.pscredential>] 
+    [<commonparameters>]</commonparameters></system.management.automation.pscredential></amazon.runtime.awscredentials></system.string></system.string></system.string></system.string></system.string></p>
+
+<p>DESCRIPTION
+    Creates and returns an AWSCredentials object</p>
+
+<p>PARAMETERS
+    -AccessKey <system.string>
+        The AWS access key for the user account. This can be a temporary access key if the corresponding session token 
+        is supplied to the -SessionToken parameter. Temporary session credentials can be set for the current shell 
+        instance only and cannot be saved to the credential store file.</system.string></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+-Credential &lt;Amazon.Runtime.AWSCredentials&gt;
+    An AWSCredentials object instance containing access and secret key information, and optionally a token for 
+    session-based credentials.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-NetworkCredential &lt;System.Management.Automation.PSCredential&gt;
+    Used with SAML-based authentication when ProfileName references a SAML role profile.  Contains the network 
+    credentials to be supplied during authentication with the  configured identity provider's endpoint. This 
+    parameter is not required if the user's default network identity can or should be used during authentication.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-ProfileName &lt;System.String&gt;
+    The user-defined name of an AWS credentials or SAML-based role profile containing credential information. The 
+    profile is expected to be found in the secure credential file shared with the AWS SDK for .NET and AWS Toolkit 
+    for Visual Studio. You can also specify the name of a profile stored in the .ini-format credential file used 
+    with  the AWS CLI and other AWS SDKs.
+    
+    Required?                    false
+    Position?                    201
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-ProfilesLocation &lt;System.String&gt;
+    Used to specify the name and location of the ini-format credential file (shared with  the AWS CLI and other 
+    AWS SDKs) when the file does not use the default name and/or  folder location. 
+    When the ini-format credential file uses the default filename ('credentials') and is  placed in the default 
+    search location ('.aws' folder in the current user's profile folder,  'C:\Users\userid') this parameter is not 
+    required. This parameter is also not required  when the profile to be used is contained in the encrypted 
+    credential file shared with the  AWS SDK for .NET and AWS Toolkit for Visual Studio. 
+    As the current folder can vary in a shell or during script execution it is advised  that you use specify a 
+    fully qualified path instead of a relative path.
+    
+    Required?                    false
+    Position?                    202
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-SecretKey &lt;System.String&gt;
+    The AWS secret key for the user account. This can be a temporary secret key if the corresponding session token 
+    is supplied to the -SessionToken parameter. Temporary session credentials can be set for the current shell 
+    instance only and cannot be saved to the credential store file.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+-SessionToken &lt;System.String&gt;
+    The session token if the access and secret keys are temporary session-based credentials. Temporary session 
+    credentials can be set for the current shell  instance only and cannot be saved to the credential store file.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    AWSCredentials</p>
+
+<pre><code>    AWSCredentials instance containing AWS credentials data.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=New-AWSCredentials.html&amp;toci
+    d=New-AWSCredentials
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psRemove-AWSLoggingListener">
+NAME
+    Remove-AWSLoggingListener</a></p>
+
+<p>SYNOPSIS
+    Removes a logger from the specified source (e.g. ‘Amazon’, or ‘Amazon.S3’) by name.</p>
+
+<p>SYNTAX
+    Remove-AWSLoggingListener [-Source] <system.string> [-Name] <system.string> [<commonparameters>]</commonparameters></system.string></system.string></p>
+
+<p>DESCRIPTION
+    Remove a listener from and AWS API trace source.</p>
+
+<p>PARAMETERS
+    -Name <system.string>
+        Name of the trace listener to remove.</system.string></p>
+
+<pre><code>    Required?                    true
+    Position?                    2
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Source &lt;System.String&gt;
+    Source to remove the listener from. 
+    Examples: 'Amazon', or 'Amazon.DynamoDB'.
+    
+    Required?                    true
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not produce any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Remove-AWSLoggingListener -Source Amazon.S3 -Name MyS3Logs
+
+
+Description
+
+-----------
+
+Removes the specified logger from the trace source.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Remove-AWSLoggingListener.ht
+    ml&amp;tocid=Remove-AWSLoggingListener
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-AWSCredentials">
+NAME
+    Set-AWSCredentials</a></p>
+
+<p>SYNOPSIS
+    Saves AWS credentials to persistent store (-StoreAs) or temporarily for the shell using shell variable 
+    $StoredAWSCredentials.Note that temporary session-based credentials cannot be saved to the persistent store.</p>
+
+<p>SYNTAX
+    Set-AWSCredentials [[-ProfileName] <system.string>] [[-ProfilesLocation] <system.string>] [-StoreAs 
+    <system.string>] [-AccessKey <system.string>] [-SecretKey <system.string>] [-SessionToken <system.string>] 
+    [-Credential <amazon.runtime.awscredentials>] [-NetworkCredential <system.management.automation.pscredential>] 
+    [<commonparameters>]</commonparameters></system.management.automation.pscredential></amazon.runtime.awscredentials></system.string></system.string></system.string></system.string></system.string></system.string></p>
+
+<p>DESCRIPTION
+    Saves AWS credentials to persistent store (-StoreAs) or temporarily for the shell using shell variable 
+    $StoredAWSCredentials.</p>
+
+<p>PARAMETERS
+    -AccessKey <system.string>
+        The AWS access key for the user account. This can be a temporary access key if the corresponding session token 
+        is supplied to the -SessionToken parameter. Temporary session credentials can be set for the current shell 
+        instance only and cannot be saved to the credential store file.</system.string></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+-Credential &lt;Amazon.Runtime.AWSCredentials&gt;
+    An AWSCredentials object instance containing access and secret key information, and optionally a token for 
+    session-based credentials.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-NetworkCredential &lt;System.Management.Automation.PSCredential&gt;
+    Used with SAML-based authentication when ProfileName references a SAML role profile.  Contains the network 
+    credentials to be supplied during authentication with the  configured identity provider's endpoint. This 
+    parameter is not required if the user's default network identity can or should be used during authentication.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-ProfileName &lt;System.String&gt;
+    The user-defined name of an AWS credentials or SAML-based role profile containing credential information. The 
+    profile is expected to be found in the secure credential file shared with the AWS SDK for .NET and AWS Toolkit 
+    for Visual Studio. You can also specify the name of a profile stored in the .ini-format credential file used 
+    with  the AWS CLI and other AWS SDKs.
+    
+    Required?                    false
+    Position?                    201
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-ProfilesLocation &lt;System.String&gt;
+    Used to specify the name and location of the ini-format credential file (shared with  the AWS CLI and other 
+    AWS SDKs) when the file does not use the default name and/or  folder location. 
+    When the ini-format credential file uses the default filename ('credentials') and is  placed in the default 
+    search location ('.aws' folder in the current user's profile folder,  'C:\Users\userid') this parameter is not 
+    required. This parameter is also not required  when the profile to be used is contained in the encrypted 
+    credential file shared with the  AWS SDK for .NET and AWS Toolkit for Visual Studio. 
+    As the current folder can vary in a shell or during script execution it is advised  that you use specify a 
+    fully qualified path instead of a relative path.
+    
+    Required?                    false
+    Position?                    202
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-SecretKey &lt;System.String&gt;
+    The AWS secret key for the user account. This can be a temporary secret key if the corresponding session token 
+    is supplied to the -SessionToken parameter. Temporary session credentials can be set for the current shell 
+    instance only and cannot be saved to the credential store file.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+-SessionToken &lt;System.String&gt;
+    The session token if the access and secret keys are temporary session-based credentials. Temporary session 
+    credentials can be set for the current shell  instance only and cannot be saved to the credential store file.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+    
+-StoreAs &lt;System.String&gt;
+    The name to be used to identity the credentials in local storage. Use this with the -ProfileName parameter on 
+    cmdlets to load the stored credentials. 
+    Temporary session credentials, identified by use of the -SessionToken parameter, cannot be stored. Specifying 
+    this parameter in addition to -SessionToken will result in an error message.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Set-AWSCredentials -ProfileName myCredentials
+
+
+Description
+
+-----------
+
+Loads the credentials contained in the specified profile and sets them active for all cmdlets in the current shell 
+(t)he parameter name can be omitted for brevity). The cmdlet first searches the credential file shared with the 
+AWS SDK for .NET and AWS Toolkit for Visual Studio. If this file does not contain a matching profile the cmdlet 
+will attempt to load the profile from the text-format credential file shared with the AWS CLI. If this file has 
+been renamed, or does not exist in the default location (), use the -ProfilesLocation parameter to point to the 
+credential file. Note that -ProfilesLocation is only used to reference credential files shared with the AWS CLI 
+that do not have the default name or location/
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt;Set-AWSCredentials -AccessKey AKIAIOSFODNN7EXAMPLE -SecretKey wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY 
+-StoreAs myCredentials
+
+
+Description
+
+-----------
+
+Saves the specified credentials as a profile named 'myCredentials'. The cmdlet does not affect any credentials 
+currently set as active in the shell. To update the shell run the cmdlet again specifying the name of the profile 
+(Set-AWSCredentials -ProfileName myCredentials).
+
+
+
+-------------------------- EXAMPLE 3 --------------------------
+
+PS C:\&gt;Set-AWSCredentials -AccessKey AKIAIOSFODNN7EXAMPLE -SecretKey wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY 
+-SessionToken SamPleTokeN.....
+
+
+Description
+
+-----------
+
+Sets the temporary session-based credentials as active in the current shell. Note that temporary credentials 
+cannot be saved as a profile.
+
+
+
+-------------------------- EXAMPLE 4 --------------------------
+
+PS C:\&gt;Set-AWSCredentials -ProfileName myCredentials -ProfilesLocation C:\myAWSCredentials.ini
+
+
+Description
+
+-----------
+
+Loads the specified credentials from the ini-format credential file ()with a non-default name and location) shared 
+with the AWS CLI and sets the active in the current shell. The -ProfilesLocation parameter can be omitted if the 
+credential file is named 'credentials' and is stored in the default location (%USERPROFILE\.aws).
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-AWSCredentials.html&amp;toci
+    d=Set-AWSCredentials
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-AWSHistoryConfiguration">
+NAME
+    Set-AWSHistoryConfiguration</a></p>
+
+<p>SYNOPSIS
+    Configures how the $AWSHistory session variable records AWS cmdlet processing.</p>
+
+<p>SYNTAX
+    Set-AWSHistoryConfiguration [-MaxCmdletHistory <system.int32>] [-MaxServiceCallHistory <system.int32>] 
+    [-RecordServiceRequests <system.management.automation.switchparameter>] [<commonparameters>]</commonparameters></system.management.automation.switchparameter></system.int32></system.int32></p>
+
+<p>DESCRIPTION
+    Configures the $AWSHistory instance for the current session.<br />
+    A history buffer size of 0 disables overall AWS cmdlet activity recording and clears any data currently  in the 
+    buffer. If the new size is smaller than the current data in the buffer, older records are deleted. 
+    By default, only service responses are recorded for a cmdlet. Use the -EnableRequestRecording switch to turn on 
+    tracing of service requests in the buffer.</p>
+
+<p>PARAMETERS
+    -MaxCmdletHistory <system.int32>
+        The maximum number of AWS cmdlet invocations that will be held in the history buffer.</system.int32></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-MaxServiceCallHistory &lt;System.Int32&gt;
+    The maximum number of service responses (and requests, if enabled) that will be recorded for a single AWS 
+    cmdlet.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-RecordServiceRequests &lt;System.Management.Automation.SwitchParameter&gt;
+    If set, also records the service requests that a cmdlet makes. Default: Off.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-AWSHistoryConfiguration.
+    html&amp;tocid=Set-AWSHistoryConfiguration
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-AWSHistoryConfiguration">
+NAME
+    Set-AWSHistoryConfiguration</a></p>
+
+<p>SYNOPSIS
+    Configures how the $AWSHistory session variable records AWS cmdlet processing.</p>
+
+<p>SYNTAX
+    Set-AWSHistoryConfiguration [-MaxCmdletHistory <system.int32>] [-MaxServiceCallHistory <system.int32>] 
+    [-RecordServiceRequests <system.management.automation.switchparameter>] [<commonparameters>]</commonparameters></system.management.automation.switchparameter></system.int32></system.int32></p>
+
+<p>DESCRIPTION
+    Configures the $AWSHistory instance for the current session.<br />
+    A history buffer size of 0 disables overall AWS cmdlet activity recording and clears any data currently  in the 
+    buffer. If the new size is smaller than the current data in the buffer, older records are deleted. 
+    By default, only service responses are recorded for a cmdlet. Use the -EnableRequestRecording switch to turn on 
+    tracing of service requests in the buffer.</p>
+
+<p>PARAMETERS
+    -MaxCmdletHistory <system.int32>
+        The maximum number of AWS cmdlet invocations that will be held in the history buffer.</system.int32></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-MaxServiceCallHistory &lt;System.Int32&gt;
+    The maximum number of service responses (and requests, if enabled) that will be recorded for a single AWS 
+    cmdlet.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-RecordServiceRequests &lt;System.Management.Automation.SwitchParameter&gt;
+    If set, also records the service requests that a cmdlet makes. Default: Off.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-AWSHistoryConfiguration.
+    html&amp;tocid=Set-AWSHistoryConfiguration
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-AWSProxy">
+NAME
+    Set-AWSProxy</a></p>
+
+<p>SYNOPSIS
+    Sets AWS default proxy for the shell. Subsequent AWS cmdlet invocations will use the configured proxy.</p>
+
+<p>SYNTAX
+    Set-AWSProxy [-Hostname] <system.string> [-Port] <system.int32> [[-Username] <system.string>] [[-Password] 
+    <system.string>] [[-Credential] <system.net.icredentials>] [<commonparameters>]</commonparameters></system.net.icredentials></system.string></system.string></system.int32></system.string></p>
+
+<p>DESCRIPTION
+    Sets AWS default proxy for the shell.</p>
+
+<p>PARAMETERS
+    -Credential <system.net.icredentials>
+        The credentials to submit to the proxy server for authentication</system.net.icredentials></p>
+
+<pre><code>    Required?                    false
+    Position?                    5
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Hostname &lt;System.String&gt;
+    Proxy server host
+    
+    Required?                    true
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Password &lt;System.String&gt;
+    Password to submit to the proxy server for authentication
+    
+    Required?                    false
+    Position?                    4
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Port &lt;System.Int32&gt;
+    Proxy server port
+    
+    Required?                    true
+    Position?                    2
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Username &lt;System.String&gt;
+    Username to submit to the proxy server for authentication
+    
+    Required?                    false
+    Position?                    3
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Set-AWSProxy -Hostname localhost -Port 8888
+
+
+Description
+
+-----------
+
+This command configures a proxy that does not require special credentials.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt;Set-AWSProxy -Hostname localhost -Port 8888 -Username 1 -Password 1
+
+
+Description
+
+-----------
+
+This command configures a proxy that requires a username and a password.
+
+
+
+-------------------------- EXAMPLE 3 --------------------------
+
+PS C:\&gt;Set-AWSProxy -Hostname localhost -Port 8888 -Credential ([System.Net.CredentialCache]::DefaultCredentials)
+
+
+Description
+
+-----------
+
+This command configures a proxy with default credentials. The -Credentials parameter can be used for any 
+credentials object that implements the ICredentials interface.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: 
+    http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-AWSProxy.html&amp;tocid=Set-AWSProxy
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-AWSResponseLogging">
+NAME
+    Set-AWSResponseLogging</a></p>
+
+<p>SYNOPSIS
+    Modify response logging options for AWS service requests.</p>
+
+<p>SYNTAX
+    Set-AWSResponseLogging [[-Level] <system.string>] [<commonparameters>]</commonparameters></system.string></p>
+
+<p>DESCRIPTION
+    Modify when to produce log entries.</p>
+
+<p>PARAMETERS
+    -Level <system.string>
+        When to log responses.</system.string></p>
+
+<pre><code>    Required?                    false
+    Position?                    1
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not produce any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Set-AWSResponseLogging -Level Always
+
+
+Description
+
+-----------
+
+Enables logging of all service responses configured in the attached listeners. Other values for the -Level 
+parameter are 'Never', which turns off logging and 'OnError' which logs only error responses.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-AWSResponseLogging.html&amp;
+    tocid=Set-AWSResponseLogging
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-AWSSamlEndpoint">
+NAME
+    Set-AWSSamlEndpoint</a></p>
+
+<p>SYNOPSIS
+    Creates or updates an endpoint settings definition for use with SAML role profiles.</p>
+
+<p>SYNTAX
+    Set-AWSSamlEndpoint -Endpoint <system.uri> -StoreAs <system.string> [-AuthenticationType <system.string>] 
+    [<commonparameters>]</commonparameters></system.string></system.string></system.uri></p>
+
+<p>DESCRIPTION
+    Creates or updates an endpoint settings definition for use with SAML role profiles. The name of the endpoint 
+    settings is used with the Set-AWSSamlRoleProfile cmdlet to associate one or more role profiles to a shared 
+    endpoint definition.</p>
+
+<p>PARAMETERS
+    -AuthenticationType <system.string>
+        The authentication type (or protocol type) used when communicating with the endpoint. If not configured for an 
+        endpoint 'Kerberos' is assumed.</system.string></p>
+
+<pre><code>    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-Endpoint &lt;System.Uri&gt;
+    The endpoint to be used when authenticating users prior to requesting temporary role- based AWS credentials. 
+    The full endpoint of the identity provider must be specified and it must be a HTTPS-scheme URL.
+    
+    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-StoreAs &lt;System.String&gt;
+    The user-defined name to assign to the endpoint settings. This name will be used when creating or accessing 
+    role profiles with the Set-AWSSamlRoleProfile cmdlet to set up and use role-based credential profiles that use 
+    the endpoint to authenticate the user.
+    
+    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    System.String</p>
+
+<pre><code>    The cmdlet returns the name assigned to the endpoint settings to the pipeline.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt; $endpoint = "https://adfs.example.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=urn:amazon:webservices"    
+PS C:\&gt; Set-AWSSamlEndpoint -StoreAs MyADFSEndpoint -Endpoint $endpoint
+
+
+Description
+
+-----------
+
+Creates or updates a profile name MyADFSEndpoint for use with Set-AWSSamlRoleProfile. Kerberos will be used as the 
+authentication protocol when authenticating users against the endoint.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt; $endpoint = "https://adfs.example.com/adfs/ls/IdpInitiatedSignOn.aspx?loginToRp=urn:amazon:webservices"    
+PS C:\&gt; Set-AWSSamlEndpoint -StoreAs MyADFSEndpoint -Endpoint $endpoint -AuthenticationType NTLM
+
+
+Description
+
+-----------
+
+Creates or updates a profile name MyADFSEndpoint for use with Set-AWSSamlRoleProfile. The endpoint is configured 
+to use the NTLM protocol during authentication (other options are Digest, Basic, Kerberos and Negotiate).
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-AWSSamlEndpoint.html&amp;toc
+    id=Set-AWSSamlEndpoint
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-AWSSamlRoleProfile">
+NAME
+    Set-AWSSamlRoleProfile</a></p>
+
+<p>SYNOPSIS
+    Creates or updates one or more role profiles for use with authentication against a SAML-based federated identity 
+    provider to obtain temporary role-based AWS credentials.</p>
+
+<p>SYNTAX
+    Set-AWSSamlRoleProfile -EndpointName <system.string> [-PrincipalARN <system.string>] [-RoleARN <system.string>] 
+    [-NetworkCredential <system.management.automation.pscredential>] -StoreAs <system.string> -StoreAllRoles 
+    <system.management.automation.switchparameter> [<commonparameters>]</commonparameters></system.management.automation.switchparameter></system.string></system.management.automation.pscredential></system.string></system.string></system.string></p>
+
+<p>DESCRIPTION
+    Creates or updates role profiles for use with a SAML federated identity provider to obtain temporary AWS 
+    credentials for roles the user is authorized to assume. The endpoint for authentication should have been 
+    configured previously using Set-AWSSamlEndpoint. Once created the role profiles can be used to obtain time-limited 
+    temporary AWS credentials by specifying the name of the role profile to the -ProfileName parameter of the 
+    Set-AWSCredentials cmdlet or any cmdlet that makes calls to AWS service operations.</p>
+
+<pre><code>User authentication is not performed until AWS credentials are required, i.e. just prior to a service operation 
+call. Additionally if the credentials expire then the tools will automatically attempt to re-authenticate the user 
+to obtain fresh credentials. When a role profile is configured to use the default logged-in user identity then 
+this process happens silently. If a role profile is configured to use an alternate identity (by specifying the 
+-NetworkCredential parameter) the user is prompted to re-enter their credentials prior to re-authentication.
+</code></pre>
+
+<p>PARAMETERS
+    -EndpointName <system.string>
+        The name assigned to the endpoint definition that was previously registered using Set-AWSSamlEndpoint. The 
+        endpoint definition contains the URL of the endpoint to be used to authenticate users prior to vending 
+        temporary AWS credentials.</system.string></p>
+
+<pre><code>    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       True (ByValue, )
+    Accept wildcard characters?  false
+    
+-NetworkCredential &lt;System.Management.Automation.PSCredential&gt;
+    Optional. Supply a value only if an identity different to the user's default Windows identity should be used 
+    during authentication. 
+     
+    If an alternate credential is specified then when the tools need to re-authenticate the user to obtain fresh 
+    credentials following expiry the user is prompted to re-enter the password for the user account before 
+    re-authentication can be performed. When the default user identity is configured for use (-NetworkCredential 
+    not specified) re-authentication occurs silently.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-PrincipalARN &lt;System.String&gt;
+    The Amazon Resource Name (ARN) of the principal holding the role to be assumed when credentials are requested 
+    following successful authentication. If specified the RoleARN parameter must also be specified. 
+     
+    If neither of the PrincipalARN and RoleARN parameters are supplied and the user is authorized to assume 
+    multiple roles the cmdlet will prompt to select the role that should be referenced by the profile. The user is 
+    also prompted if ARNs are specified but cannot be found in the data returned on successful authentication.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-RoleARN &lt;System.String&gt;
+    The Amazon Resource Name (ARN) of the role to be assumed when credentials are requested following successful 
+    authentication. If specified the PrincipalARN parameter must also be specified. 
+     
+    If neither of the PrincipalARN and RoleARN parameters are supplied and the user is authorized to assume 
+    multiple roles the cmdlet will prompt to select the role that should be referenced by the profile. The user is 
+    also prompted if ARNs are specified but cannot be found in the data returned on successful authentication.
+    
+    Required?                    false
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-StoreAllRoles &lt;System.Management.Automation.SwitchParameter&gt;
+    If set all roles available to the user are evaluated following authentication and one role profile per role 
+    will be created. The name of each role will be used for each corresponding profile that is created.
+    
+    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+-StoreAs &lt;System.String&gt;
+    The name to associate with the role data. This name will be used with the -ProfileName parameter to 
+    Set-AWSCredentials cmdlet and AWS service cmdlets to load the profile and obtain temporary AWS credentials 
+    based on the role and other data held in the profile.
+    
+    Required?                    true
+    Position?                    Named
+    Default value                None
+    Accept pipeline input?       False
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    System.String</p>
+
+<pre><code>    This cmdlet returns the name of the role profile to the pipeline. If the -StoreAllRoles switch is used the 
+    names of all created or updated profiles are output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Set-AWSSamlRoleProfile -StoreAs Role1 -EndpointName MyADFSEndpoint
+
+
+Description
+
+-----------
+
+Authenticates the currently logged in user account against the specified endpoint (configured previusly using 
+Set-AWSSamlEndpoint). Following successful authentication, if the user is authorized to assume only a single role 
+the role details are stored in a profile named 'Role1'. If the user is authorized for more than one role a menu is 
+presented for the desired  role to be associated with the profile to be selected.
+
+The role profile can be used to obtain time-limited temporary AWS credentials by specifying it as the value of the 
+-ProfileName parameter to the Set-AWSCredentials cmdlet or any cmdlet that makes calls to AWS service operations. 
+Authentication prior to obtaining credentials is performed using the current user identity.
+
+
+
+-------------------------- EXAMPLE 2 --------------------------
+
+PS C:\&gt; $credential = Get-Credential -Message "Enter user credentials for authentication" 
+PS C:\&gt; Set-AWSSamlRoleProfile -StoreAs Role1 -EndpointName MyADFSEndpoint -NetworkCredential $credential
+
+
+Description
+
+-----------
+
+Authenticates the specified user account against the specified endpoint (configured previously using 
+Set-AWSSamlEndpoint). Following successful  authentication, if the user is authorized to assume only a single role 
+the role details are stored in a profile named 'Role1'. If the user is authorized for more than one role a menu is 
+presented for the desired  role to be associated with the profile to be selected.
+
+The role profile can be used to obtain time-limited temporary AWS credentials by specifying it as the value of the 
+-ProfileName parameter to the Set-AWSCredentials cmdlet or any cmdlet that makes calls to AWS service operations. 
+Authentication prior to obtaining credentials is performed using the current user identity.
+
+
+
+-------------------------- EXAMPLE 3 --------------------------
+
+PS C:\&gt; $params = @{
+    "PrincipalARN"="arn:aws:iam::012345678912:saml-provider/ADFS"
+    "RoleARN"="arn:aws:iam::012345678912:role/ADFS-Dev"
+}
+PS C:\&gt; Set-AWSSamlRoleProfile @params -StoreAs ADFS-Dev
+
+
+Description
+
+-----------
+
+This example shows how to create or update a role profile when the Amazon Resource Names (ARNs) for the role are 
+known in advance. Following authentication for the currently logged in user the cmdlet will verify that the role 
+is present in the set the user is authorized to assume and set up the role profile. If the role is not found the 
+user is prompted to select the correct role.
+
+To authenticate as a different user account add the -NetworkCredential parameter as shown in other examples.
+
+
+
+-------------------------- EXAMPLE 4 --------------------------
+
+PS C:\&gt;Set-AWSSamlRoleProfile -StoreAllRoles -EndpointName MyADFSEndpoint
+
+
+Description
+
+-----------
+
+Authenticates the current user account against the configured endpoint and if successful creates one role profile 
+for each role the user is authorized to assume. The 'friendly name' of the role is used as the name for each 
+profile.
+
+To authenticate as a different user account add the -NetworkCredential parameter as shown in other examples.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-AWSSamlRoleProfile.html&amp;
+    tocid=Set-AWSSamlRoleProfile
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+<p><a name="psSet-DefaultAWSRegion">
+NAME
+    Set-DefaultAWSRegion</a></p>
+
+<p>SYNOPSIS
+    Sets a default AWS region system name (e.g. us-west-2, eu-west-1 etc) into the shell variable $StoredAWSRegion.</p>
+
+<p>SYNTAX
+    Set-DefaultAWSRegion [[-Region] <system.object>] [<commonparameters>]</commonparameters></system.object></p>
+
+<p>DESCRIPTION
+    Sets a default AWS region into the shell environment, accessible as $StoredAWSRegion.</p>
+
+<p>PARAMETERS
+    -Region <system.object>
+        The system name of an AWS region or an AWSRegion instance. This governs the sendpoint that will be used when 
+        calling service operations. Note that  the AWS resources referenced in a call are usually region-specific.</system.object></p>
+
+<pre><code>    Required?                    false
+    Position?                    211
+    Default value                None
+    Accept pipeline input?       True (ByValue, ByPropertyName)
+    Accept wildcard characters?  false
+    
+&lt;CommonParameters&gt;
+    This cmdlet supports the common parameters: Verbose, Debug,
+    ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+    OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+    about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+</code></pre>
+
+<p>INPUTS</p>
+
+<p>OUTPUTS
+    None</p>
+
+<pre><code>    This cmdlet does not generate any output.
+
+
+-------------------------- EXAMPLE 1 --------------------------
+
+PS C:\&gt;Set-DefaultAWSRegion -Region us-west-2
+
+
+Description
+
+-----------
+
+Sets the default region for all cmdlets in the current shell to 'us-west-2' (the parameter name can be omitted for 
+brevity). Once a shell default has been set you can override the default by using the -Region parameter with the 
+specific cmdlet(s) as required.
+</code></pre>
+
+<p>RELATED LINKS
+    Online version: http://docs.aws.amazon.com/powershell/latest/reference/index.html?page=Set-DefaultAWSRegion.html&amp;to
+    cid=Set-DefaultAWSRegion
+    Common credential and region parameters: 
+    http://docs.aws.amazon.com/powershell/latest/reference/items/pstoolsref-commonparams.html</p>
+
+          <div class="panel panel-default">
+                 <div class="panel-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h2 class="text-center"><font color=#ffffff>Content writing and web development.</font></h2>
+                      </div>
+                    </div>
+                    <div>
+                        <div class="col-md-12 text-center">
+                          <img src="/assets/github.png" class="img-responsive">
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                          <a class="btn btn-warning btn-blog" href="https://github.com/benjaminwulf" target="_blank">
+                            Code Repository
+                          </a>
+                        </div>
+                    </div> 
+                 </div>
+            </div>
+            
+            <div class="post-author">
+              <div class="post-author-image">
+                <img src="https://secure.gravatar.com/avatar/7d0da19393b3b5dff39fbb5f53b21040">
+              </div>
+              <div class="post-author-details">
+                <h5>by Benjamin W Wulf</h5>
+                Founder of wulf consulting and author of Shell Gaming Dominion
+              </div>
+            </div>
+            
+            
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+              $(function(e) {
+                  $(".tweet-quote").click(function() {
+                      var tweetText = encodeURI('"' + $(this).text() + '"');
+                      var href = "https://twitter.com/intent/tweet?text=" + tweetText +
+                          "&url=http://wulf.io/powershell/2016/06/07/aws-tools-powershell-cmdlet-help/&via=ProjectBeegit";
+
+                      window.open(href, 'child', 'scrollbars,width=650,height=500');
+                  });
+              });
+
+              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+              var disqus_shortname = 'benjaminwulf'; // required: replace example with your forum shortname
+
+              /* * * DON'T EDIT BELOW THIS LINE * * */
+              (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    <div class="footer">
+  <div class="container">
+    <div class="wrapper">
+      <div class="col-sm-6 footer-column">
+        <h3>Shell Gaming Dominion</h3>
+<!--         <img src="http://0.gravatar.com/avatar/7d0da19393b3b5dff39fbb5f53b21040" class="img-responsive logo">
+-->        <p>SGDM is the world created by author and programmer  <a href="https://github.com/benjaminwulf" target="_blank">Benjamin Wulf</a>. Writing since 2004 in a journal format and more recently in markdown. The book <i>c2025</i> in an experiential loose collaboration of out of Leo Dvorak's diary in the building of a super computer coined <i>[TBD]</i> In writing <i> c2025 </i> and aiming to bring programming into the fiction form to inspire the net runners of tomorrow.  </p>
+      </div>
+<!--      <div class="col-sm-2 footer-column">
+        <h3>Company</h3>
+        <ul class="footer-links">
+          <li><a href="https://beegit.com/writing-software" target="_blank">Tour</a></li>
+          <li><a href="https://beegit.com/about" target="_blank">About Us</a></li>
+          <li><a href="https://beegit.com/request-demo" target="_blank">Request A Demo</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-2 footer-column">
+        <h3>Resources</h3>
+        <ul class="footer-links">
+          <li><a href="https://beegit.com/markdown-cheat-sheet" target="_blank">Markdown Cheat Sheet</a></li>
+          <li><a href="https://beegit.com/media-kit" target="_blank">Media Kit</a></li>
+          <li><a href="http://help.beegit.com" target="_blank">Help Docs</a></li>
+          <li><a href="http://shellgaming.com/feed"><i class="fa fa-rss"></i> Subscribe</a></li>
+        </ul>
+      </div> -->
+      <div class="col-sm-2 footer-column">
+        <h3>Hello</h3>
+        <ul class="footer-links">
+          <li><a href="http://twitter.com/benjiwulf" target="_blank">Twitter</a></li>
+          <li><a href="https://github.com/benjaminwulf" target="_blank">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/benjaminwulf" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
+    <div class="col-sm-12">
+      <hr>
+        <p class="copyright">&copy; WULF 2015. All rights reserved.</p>
+      </div>
+  </div>
+</div>
+    
+    </body>
+</html>

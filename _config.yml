@@ -1,0 +1,12 @@
+# Site settings
+title: ""
+email: "benjamin@wulf.io"
+description: ""
+baseurl: ""
+url: "http://wulf.io"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+
