@@ -18,7 +18,7 @@ TECHNOLOGY SUMMARY
  
 5+ years of experience in IT infrastructure, specializing in messaging, mobile, and automation tasks. Experienced with Microsoft Server 2008, 2012, Unix/Linux systems and virtualization solutions.  Contributed to proof concepts, rollouts, and lead end-user training. Active on GitHub and freeCodeCamp.
 
-######Languages/Programming:
+Languages/Programming:
 
 | **PROFICIENT**         |            |   |
 |:---|:---|:---|
@@ -30,11 +30,11 @@ TECHNOLOGY SUMMARY
 |**IMPROVING**           |            |   |        
 | PERL      | JAVASCRIPT |
 
-###PROFESSIONAL CERTIFICATES
+PROFESSIONAL CERTIFICATES
 
 MCSA: Windows Server     2013
 
-###BOOTCAMPS
+BOOTCAMPS
 
 Big Nerd Ranch iOS/Objective-C    2014
 
@@ -45,11 +45,11 @@ The Iron Yard     Ruby on Rails    2015
 EDUCATION
 ---------
 
-###Miami University, Oxford Ohio
+Miami University, Oxford Ohio
 
 BS, Business Management – MAY 2006
 
-###Hennepin Technical College, Brooklyn Park Minnesota
+Hennepin Technical College, Brooklyn Park Minnesota
 
 Horticulture, 1 year – MAY 2007
 
@@ -58,15 +58,15 @@ Horticulture, 1 year – MAY 2007
 WORK EXPERIENCE
 ---------------
 
-###FREELANCE WRITER     BRADENTON, FLORIDA    MAR 2013 – CURRENT
+FREELANCE WRITER     BRADENTON, FLORIDA    MAR 2013 – CURRENT
 
 Published techno thriller novel titled Shell Gaming Dominion on Kindle & iBooks
 
 805lit.org    Contributing Editor    MAR 2015 - OCT 2015
 
-###BEMIS COMPANY, INC.    NEENAH, WISCONSIN    AUG 2008 - FEB 2013
+BEMIS COMPANY, INC.    NEENAH, WISCONSIN    AUG 2008 - FEB 2013
 
-######_IT TECHNOLOGY ANALYST II     OSHKOSH, WISCONSIN     NOV 2010 – MAR 2013_
+_IT TECHNOLOGY ANALYST II     OSHKOSH, WISCONSIN     NOV 2010 – MAR 2013_
 
 Plan, install, and maintain hardware/software.
 
@@ -78,16 +78,16 @@ Plan, install, and maintain hardware/software.
 - Moved 12,000+ mailboxes over 6 week period to new data center
 - Deployed Lync instant messaging client (6,000+ clients)
 
-######_TELECOMM ANALYST    OSHKOSH, WISCONSIN    NOV 2009 - OCT 2010_
+_TELECOMM ANALYST    OSHKOSH, WISCONSIN    NOV 2009 - OCT 2010_
 
 Plan, deploy, and support BlackBerry Smartphone as BlackBerry Enterprise Server (BES) administrator.
 
-######_IT HELP DESK ANALYST    OSHKOSH, WISCONSIN    AUG 2008 - OCT 2009_
+_IT HELP DESK ANALYST    OSHKOSH, WISCONSIN    AUG 2008 - OCT 2009_
 
 Incoming IT escalations with Citrix, SAP, Microsoft, PeopleSoft, PC imaging and rebuilds
 
-###MONROVIA GROWERS    VISALIA, CALIFORNIA SEP 2007 - JUL 2008
+MONROVIA GROWERS    VISALIA, CALIFORNIA SEP 2007 - JUL 2008
 
-######_HORTICULTURAL SALES CRAFTSMAN_
+_HORTICULTURAL SALES CRAFTSMAN_
 
 Maintained and built relationships with Las Vegas casinos such as Bellagio, Venetian, and MGM Grand to create truly unique experiences from their patrons.
