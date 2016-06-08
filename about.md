@@ -9,10 +9,6 @@ permalink: /about/
 BENJAMIN WILSON WULF
 --------------------
 
-418 1st Avenue East, Bradenton, FL 34208
-
-941-400-0685
-
 benjamin@wulf.io
 
 <br>
@@ -61,10 +57,6 @@ Horticulture, 1 year – MAY 2007
 
 WORK EXPERIENCE
 ---------------
-
-###TEAVANA    SARASOTA, FLORIDA    OCT 2015 – DEC 2015
-
-######_BARISTA / SALES SUPPORT_
 
 ###FREELANCE WRITER     BRADENTON, FLORIDA    MAR 2013 – CURRENT
 
