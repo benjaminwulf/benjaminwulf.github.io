@@ -2,13 +2,13 @@
 layout: default
 ---
 
-{% for post in site.categories['nonfiction'] limit:1 %}
+{% for post in site.categories['perl'] limit:1 %}
 <div class="container-fluid image-header" style="background-image: url('{{ post.image }}');">
   <div class="row">
     <div class="image-header-overlay">
       <div class="container">
         <div class="col-md-8 col-md-offset-2">
-          <h3><span>The Latest in Nonfiction</span></h3>
+          <h3><span>The Latest in perl</span></h3>
           <h1 class="featured">{{post.title}}</h1>
           <a href="{{ post.url }}" class="btn btn-warning btn-blog">READ POST</a>
         </div>
@@ -19,14 +19,14 @@ layout: default
 {% endfor %}
 <div class="container">
   <div class="col-md-12">
-      <h2 class="posts-intro">More Posts About Nonfiction</h2>
+      <h2 class="posts-intro">More Posts About perl</h2>
   </div>
 </div>
 <div class="container">
 	<div class="col-md-12">
 	    <div class="posts">
 	        <div class="row">
-	            {% for post in site.categories.nonfiction offset:1 %}
+	            {% for post in site.categories.perl offset:1 %}
 	            {% include listpost.html p=post %}
 	            {% endfor %}
 	        </div>
