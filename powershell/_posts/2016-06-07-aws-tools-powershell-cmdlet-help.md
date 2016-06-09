@@ -5,7 +5,7 @@ title:  AWS Tools for Windows PowerShell
 date:   2016-06-07 17:48:00
 teaser: A one-liner that morphed into an entire blog entry spanning everything from how
  to setup AWS Tools for Windows PowerShell via the command-line.
-image:
+image: https://s3.amazonaws.com/wulf.io/img/2016-06-07-powershell.png
 author: benjamin_w_wulf
 comments: true
 shortUrl:
