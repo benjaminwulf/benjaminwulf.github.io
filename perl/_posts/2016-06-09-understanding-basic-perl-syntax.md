@@ -17,6 +17,7 @@ Understanding basic Perl syntax
 You installed Perl. Now what?
 
 Variables
+
 ```
 my $scalar;
 my @array;
@@ -96,17 +97,19 @@ TERNARY CONDITIONAL OPERATOR
 
 Evaluates conditional expression to one of two alternative
 
-```
-my $time_suffix = after_noon($time)
+```my $time_suffix = after_noon($time)
                     ? 'afternoon'
-                    : 'morning';
-    # equivalent to
-    my $time_suffix;
-    if (after_noon(time)) {
-        $time_suffix = 'afternoon';
+                    : 'morning';```
+
+equivalent to
+
+```
+my $time_suffix;
+if (after_noon(time)) {
+    $time_suffix = 'afternoon';
     }
-    else {
-        $time_suffix = 'morning';
+else {
+    $time_suffix = 'morning';
     }
 ```
 
