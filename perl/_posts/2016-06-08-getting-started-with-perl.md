@@ -4,7 +4,7 @@ layout: post
 title:  Getting Started With Perl
 date:   2016-06-08 18:05:00
 teaser: Day 1 using Perl Programming Lanuage
-image:
+image: https://s3.amazonaws.com/wulf.io/img/2016-06-08-getting-started-with-perl.png
 author: benjamin_w_wulf
 comments: true
 shortUrl:
