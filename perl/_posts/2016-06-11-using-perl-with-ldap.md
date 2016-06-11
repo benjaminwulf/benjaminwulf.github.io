@@ -40,7 +40,8 @@ Via the command line type:
 Then open up in Vim or your editor of choice. Type in this code block (FYI, even though copy/paste works...) Come on man! Vim will be covered in a future post.
 
 
-<code>#!/usr/bin/env perl
+<pre class="prettyprint linenums language-perl">
+#!/usr/bin/env perl
 use strict;
 use warnings;
 
@@ -71,13 +72,15 @@ foreach my $entry ($result->entries) {
       ($entry->get_value("mail") || '');
 }
 
-$ldap->unbind;</code>
+$ldap->unbind;
+</pre>
 
 
 ###_And it should return:_
 
 
-<code>------------------------------------------------------------------------
+<pre class="linenums">
+------------------------------------------------------------------------
 dn:uid=cwoodson,ou=People,dc=umich,dc=edu
 
       objectClass: umichPerson
@@ -96,4 +99,5 @@ RealtimeBlockList: TRUE
       displayName: Charles C Woodson
           krbName: cwoodson@umich.edu
                ou: Alumni
-========================================</code>
+\========================================
+</pre>
