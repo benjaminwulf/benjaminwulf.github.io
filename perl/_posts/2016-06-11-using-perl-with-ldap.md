@@ -39,7 +39,7 @@ Via the command line type:
 
 Then open up in Vim or your editor of choice. Type in this code block (FYI, even though copy/paste works...) Come on man! Vim will be covered in a future post.
 
-```
+<code>
 #!/usr/bin/env perl
 use strict;
 use warnings;
@@ -72,11 +72,14 @@ foreach my $entry ($result->entries) {
 }
 
 $ldap->unbind;
-```
+</code>
 
-_And it should return:_
 
-```------------------------------------------------------------------------
+###_And it should return:_
+
+
+<code>
+------------------------------------------------------------------------
 dn:uid=cwoodson,ou=People,dc=umich,dc=edu
 
       objectClass: umichPerson
@@ -96,4 +99,4 @@ RealtimeBlockList: TRUE
           krbName: cwoodson@umich.edu
                ou: Alumni
 ========================================
-```
+</code>
