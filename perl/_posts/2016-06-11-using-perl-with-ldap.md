@@ -17,6 +17,8 @@ Using Perl with LDAP
 Going for the Heisman with LDAP
 -------------------------------
 
+<img src="https://s3.amazonaws.com/wulf.io/img/2016-06-11-charles_c_woodson.jpg">
+
 Okay... day five learning perl. In short this this post is  the equiliant of riding a big wheel for a day, upgrading to a bicycle with training wheels and going right to riding a unicycle while juggling!
 
 Unlike most languages that one spends most their time learning upfront writing long and mindless code riddled with syntax errors, Perl is not only intuitive, it is extremely powerful in concise scripts. While I have not taken the time to explain all the basic fundimentals yet, I will wet your pallet by talking the University of Michigan LDAP servers, short for Lightweight Directory Access Protocol. LDAP runs on a layer above TCP/IP and is a client-server mechanism for storing Direcotry data. 
@@ -30,8 +32,6 @@ It is also possible there are some dependencies, depending on your individual ca
 ```ldap.itd.umich.edu```
 
 Because <a href="https://en.wikipedia.org/wiki/Charles_Woodson">Charles Woodson</a>(NCAA national champian, Heisman recipiant, and Super Bowl XLV champian) is a Uof Michigan alumni, he is use in our example.
-
-<img scr="https://s3.amazonaws.com/wulf.io/img/2016-06-11-charles_c_woodson.jpg" alt="Heisman pose if your code block works">
 
 Via the command line type:
 
@@ -74,10 +74,9 @@ foreach my $entry ($result->entries) {
 $ldap->unbind;
 ```
 
-*Fingers crossed... it should return:*
+_And it should return:_
 
-```
-------------------------------------------------------------------------
+```------------------------------------------------------------------------
 dn:uid=cwoodson,ou=People,dc=umich,dc=edu
 
       objectClass: umichPerson
