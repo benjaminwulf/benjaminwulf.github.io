@@ -76,7 +76,7 @@ $ldap->unbind;
 </pre>
 
 
-###_And it should return:_
+*And it should return:*
 
 
 <pre class="linenums">
