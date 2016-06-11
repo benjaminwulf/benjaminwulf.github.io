@@ -31,7 +31,7 @@ It is also possible there are some dependencies, depending on your individual ca
 
 ```ldap.itd.umich.edu```
 
-Because <a href="https://en.wikipedia.org/wiki/Charles_Woodson">Charles Woodson</a>(NCAA national champian, Heisman recipiant, and Super Bowl XLV champian) is a Uof Michigan alumni, he is use in our example.
+Because <a href="https://en.wikipedia.org/wiki/Charles_Woodson">Charles Woodson</a> (NCAA national champian, Heisman recipiant, and Super Bowl XLV champian) a U of Michigan alumni, he is use in our example.
 
 Via the command line type:
 
