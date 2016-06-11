@@ -19,26 +19,24 @@ Going for the Heisman with LDAP
 
 <img src="https://s3.amazonaws.com/wulf.io/img/2016-06-11-charles_c_woodson.jpg">
 
-Okay... day five learning perl. In short this this post is  the equiliant of riding a big wheel for a day, upgrading to a bicycle with training wheels and going right to riding a unicycle while juggling!
+Day five learning Perl. In short this this post is the equivalent of riding a big wheel for a day, upgrading to a bicycle with training wheels, then riding a unicycle while juggling!
 
-Unlike most languages that one spends most their time learning upfront writing long and mindless code riddled with syntax errors, Perl is not only intuitive, it is extremely powerful in concise scripts. While I have not taken the time to explain all the basic fundimentals yet, I will wet your pallet by talking the University of Michigan LDAP servers, short for Lightweight Directory Access Protocol. LDAP runs on a layer above TCP/IP and is a client-server mechanism for storing Direcotry data. 
+Usually learning a new lanuage upfront writing is long and mindless code riddled with syntax errors. While that is still bound to occur, Perl is intuitive, it is extremely powerful concise. Today I will wet your pallet by talking the University of Michigan LDAP server. Short for Lightweight Directory Access Protocol, LDAP runs on a layer above TCP/IP and is a client-server mechanism for storing Direcotry data. 
 
 For this example to work, you will need to run:
 
 ```cpan Net::LDAP```
 
-It is also possible there are some dependencies, depending on your individual case. In that event grab those as well. We will be connecting to:
+It is also possible there are some dependencies, depending on your individual case. In that event grab those as well.
 
 ```ldap.itd.umich.edu```
 
-Because <a href="https://en.wikipedia.org/wiki/Charles_Woodson">Charles Woodson</a> (NCAA national champian, Heisman recipiant, and Super Bowl XLV champian) a U of Michigan alumni, he is use in our example.
+<a href="https://en.wikipedia.org/wiki/Charles_Woodson">Charles Woodson</a> (NCAA national champion, Heisman recipient, and Super Bowl XLV champion). He also is a U of Michigan alumni, so we will use him in our example.
 
-Via the command line type:
+<br>
+Via the command name a file something like: ```touch learn_ldap.pl```
 
-```touch learn_ldap.pl```
-
-Then open up in Vim or your editor of choice. Type in this code block (FYI, even though copy/paste works...) Come on man! Vim will be covered in a future post.
-
+Open up in Vim or your editor of choice. Type in this code block (FYI, even though copy/paste works...) Come on man!
 
 <pre class="prettyprint linenums language-perl">
 #!/usr/bin/env perl
