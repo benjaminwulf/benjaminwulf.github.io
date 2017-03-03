@@ -1,9 +1,9 @@
 # Site settings
 title: ""
-email: "benjamin@wulf.io"
+email: ""
 description: ""
 baseurl: ""
-url: "http://wulf.io"
+url: ""
 
 # Build settings
 markdown: kramdown
