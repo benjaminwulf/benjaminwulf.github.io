@@ -1,0 +1,57 @@
+.header {
+  width: 200px;
+  height: 50px;
+  background: seagreen;
+  margin: auto;
+  width: 30%;
+  border: 3px solid seagreen;
+  padding: 10px;
+  color: white;
+  font-family: 'Times New Roman', Courier, monospace;
+  font-size: 26px;
+  float: left;
+
+}
+
+.nav {
+  width: 400px;
+  height: 50px;
+  margin: auto;
+  border: 3px solid white;
+  padding: 10px;
+  background: white;
+  font-family: 'Times New Roaman', Courier, monospace;
+  font-size: 14px;
+  float: left 200px;
+
+}
+
+.about {
+  font-family: 'Times New Roman', 'Courier New', Courier, monospace;
+  color: seagreen;
+  font-size: 26px;
+  float: left;
+}
+
+img.about {
+  float: left;
+}
+
+.aside {
+  font-family: 'Times New Roman', Courier, monospace;
+  color: #666666;
+  font-size: 14px;
+  float: left 200px;
+
+}
+
+.article {
+    font-family: 'Times New Roman', Courier, monospace;
+    color: #666666;
+    font-size: 14px;
+    float: left;
+}
+
+#footer {
+
+}

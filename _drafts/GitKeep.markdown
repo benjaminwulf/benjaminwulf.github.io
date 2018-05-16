@@ -1,1 +1,0 @@
-Keep this file in here so Git does not erase the _drafts folder. 

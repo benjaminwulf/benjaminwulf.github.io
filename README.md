@@ -1,4 +1,2 @@
-benjaminwulf.github.io
-================
-
-Benjamin Wulf's pubic blog – powered by Jekyll.
+# Basic-Portfolio
+Benjamin Wulf's basic portfolio in html and css
