@@ -11,6 +11,7 @@ body {
     font-size: 18px;
     line-height: 34px;
     color: #777;
+    max-width: 960px;
 }
 
 * {
@@ -23,6 +24,7 @@ body {
     margin: 0 auto;
     clear: both;
     background-color: #fff;
+    max-width: 960px;
 }
 
 #main-container {
@@ -69,9 +71,9 @@ h1 {
     border: 3px solid #4aaaa5;
     width: auto;
     height: 80px;
-    margin: 0px 0px 0px 40px;
+    margin: 0px auto;
     padding: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     line-height: 34px;
     color: #fff;
@@ -82,7 +84,7 @@ nav {
     float: right;
     font-family: Arial;
     overflow: hidden;
-    margin: 0px 40px 0px 0px;
+    margin: 0px auto;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -109,4 +111,6 @@ p {
 
 footer {
     text-align: center;
+    margin: 0px auto;
+    width:100%;
 }
