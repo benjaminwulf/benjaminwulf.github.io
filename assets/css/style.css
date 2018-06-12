@@ -39,6 +39,17 @@
     opacity: .88;
 }
 
+.jumbotron-portfolio-bg {
+    color: #fff;
+    text-align: right;
+    background:url('https://s3-us-west-2.amazonaws.com/benji.to/img-jumbotron-portfolio.png');
+    background-size:cover;
+    background-position:center;
+    padding-top:100px;
+    padding-bottom:100px;
+    opacity: .88;
+}
+
 #front-range-logo-left {
     float: left;
 }
@@ -113,6 +124,5 @@
 
 .code-text {
     font-family: consolas;
-    background-color: dimgray;
     color: #000;
 }
