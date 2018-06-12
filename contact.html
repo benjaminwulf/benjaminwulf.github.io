@@ -1,39 +1,179 @@
-<!DOCTYPE html>
+<!DOCTYPE= html>
 <html lang="en-us">
-    <head>
-        <meta charset="UTF-8">
-        <title>Portfolio</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    </head>
+<header>
+    <title>benji.to</title>
+</header>
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <body>
-        <header id="master">
-            <div class="container">
-                <a id="about-me" href="index.html">Benjamin W Wulf</a>
-                <nav>
-                        <a href="index.html">| About Me </a>
-                        <a href="portfolio.html">| Portfolio</a>
-                        <a href="contact.html">| Contact</a>
-                </nav>
-            </div>
-        </header>
-        
-        <div id="main-container" class="container">
-            <section class="main-section">
-                <h1>Contact</h1>
-                    <form action="/action_page.php" method="get">
-                    Name:<br><input type="text" name="name" size="40"><br>
-                    Email:<br><input type="text" name="email" size="40"><br>
-                    Message:<br><textarea name="message" cols="40" rows="5"></textarea><br>
-                    <input type="submit" value="Submit">
-                  </form>
-            </section>
-            <footer>
-                <div class="container" class="footer">
-                    Copyright &copy;
-                </div>
-            </footer>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <!-- BOOTSTRAP CDN -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <!-- FONTS CDN -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Libre+Barcode+39|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+            crossorigin="anonymous">
+        <!-- LOCAL CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <!-- jQuery CDN -->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    </head>
+
+<!-- BEGIN NAVBAR  -->
+<nav class="navbar navbar-toggleable navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="https://s3-us-west-2.amazonaws.com/benji.to/img-brand-logo-front-range-comics.png" width="42px" height="28px" class="d-inline-block align-top"
+                alt=""> BENJI.TO
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">HOME
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="code.html">CODING</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="golf.html">GOLFING</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.comixology.com/Shell-Gaming-Dominion-1/digital-comic/601314" target="_blank">COMIC</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.youtube.com/watch?v=XsU30vrMuGQ" target="_blank">RACING</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">CONTACT</a>
+                </li>
+                <li>
+                     <!-- BEGIN LOGIN -->
+                         <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            LOGIN
+                            </button>
+                     <div class="dropdown-menu dropdown-menu-right login-form">
+                       <div class='container'>
+                         <form>
+                           <div>
+                               <h4>Username</h4><input class='username'>
+                               <h4>Password</h4><input type='password'>
+                           </div>
+                        <input class='sign-in-button' type='submit' value='Sign In'>
+                        </form>
+                        <button class="dropdown-item" type="button"><i class="fab fa-facebook-square"></i> FB</button>
+                        <button class="dropdown-item" type="button"><i class="fab fa-github-square"></i> GITHUB</button>
+                        <button class="dropdown-item" type="button">CREATE ACCOUNT</button>
+                     </div>
+                     <!-- END LOGIN -->
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<!-- BEGIN JUMBOTRON -->
+<div class="jumbotron-contact-bg">
+    <div class="container">
+        <img id="front-range-logo-left" border="0" alt="Front Range Comics Logo" src="https://s3-us-west-2.amazonaws.com/benji.to/logo-front-range-comics.png"
+            width="313px" height="200px">
+        <div class="text-align-tablet">
+            <h1 class="display-4">BENJI.TO/
+                <a id="font-barcode" href="https://www.instagram.com/p/Bi1l1GDAu0v/?taken-by=golf.kings_" target="_blank" style="color: dodgerblue">fore</a>
+            </h1>
+            <p class="lead">
+                <a href="golf.html">
+                    <font color="white">GOLF BY DAY. </font>
+                </a>
+                <a href="code.html">
+                    <font color="white">CODE BY NITE. </font>
+                </a>
+                <a href="contact.html">
+                    <font color="white">AT 5280.</font>
+                </a>
+            </p>
+
         </div>
-    </body>
+    </div>
+</div>
+<!-- END JUMBOTRON -->
+<br>
+
+<body>
+
+    <!-- BEGIN GRID  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- BEGIN FORM INSIDE ROW HERE -->
+                <form>
+                    <h1>CONTACT</h1>
+                    <div class="form-row">
+                        <div class="col-sm-2">
+                            <label>
+                                <h2>NAME</h2>
+                            </label>
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">
+                            <h2>EMAIL</h2>
+                        </label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">
+                            <h2>MESSAGE</h2>
+                        </label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+
+                <br>
+                <!-- END FORM HERE -->
+            </div>
+        </div>
+</body>
+
+<br>
+<!-- BEGIN FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                Copyright &copy;
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER -->
+
 </html>
