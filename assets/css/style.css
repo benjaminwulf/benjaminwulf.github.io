@@ -6,6 +6,9 @@
     margin: 20px 20px 20px 20px;
 }
 
+.grid {
+    align-self: center;
+}
 .jumbotron {
     color: #fff;
     text-align: right;
