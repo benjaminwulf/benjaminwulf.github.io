@@ -23,12 +23,12 @@ More information available:
 - analyst.alias ::[H1He2]
 
 ::::::::::::::::::::::<br>
-::#HEXVAL__::<br>
+::HEXVAL__:::<br>
 ::FD7A00AA::<br>
 ::::::::::::::::::::::<br>
 ::ff8800aa::::<br>
 ::======__:::<br>
-::Fe8000Aa:::::::<br>
+::Fe8000Aa:::<br>
 ::::::::::::::::::::::<br>
 <br>
 # HEX-VAL<br>
