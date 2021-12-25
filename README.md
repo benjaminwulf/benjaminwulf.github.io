@@ -1,6 +1,5 @@
 # WELCOME TO SGD.vin
-### Here you can submit request for UID inside NFT gaming platform...
-### All request e-mail to:
+### Submit UID request e-mail:
 <inquiry@frontrnagecomics.com>
 
 # 🌀 FRONT RANGE COMICS
@@ -58,6 +57,7 @@ More information available:
 ### Exmple:
 :shell: <br>
 U+1F41A <br>
+
 # RANK-AND-FILE<br>
 More information available:<br>
 <https://gitlab.com/sgd-pt/schema/><br>
