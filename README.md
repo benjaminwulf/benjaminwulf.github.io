@@ -1,4 +1,4 @@
-# WELCOME TO SGD.vin
+# SGD.vin
 ### Submit UID request e-mail:
 <inquiry@frontrnagecomics.com>
 
