@@ -43,9 +43,8 @@ More information available:
 .pink  [  ] APNIC (OCEANA)<br>
 .black [  ] LACNIC (MEXICO, LATIN AMERICA, SA)<br>
 ### Choose (1) emoji icon with shortcode, codepoint unicode, or draw/describe (we will do out best to accomodate).
-### Exmple:
-:shell: <br>
-U+1F41A <br>
+### Exmple: 
+:shell: or U+1F41A <br>
 # RANK-AND-FILE<br>
 More information available:<br>
 <https://gitlab.com/sgd-pt/schema/><br>
