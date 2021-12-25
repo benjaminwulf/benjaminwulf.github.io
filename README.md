@@ -1,22 +1,17 @@
 # SGD.vin
 ### Submit UID request e-mail:
 <inquiry@frontrnagecomics.com>
-
 # 🌀 FRONT RANGE COMICS
 ### SITE
 <http://frontrangecomics.com/>
-
 # 🐚 SHELL GAMING DOMINION
 ### SERVICE
 <http://shellgamingdominion.com/>
-
-### SGD[NODE] RPG
-SGD[node].rgp
-
-### HEX-VAL-QUOTIENT
+# SGD[NODE] RPG
+### SGD[node].rgp
+# HEX-VAL-QUOTIENT
 More information available:
 <https://gitlab.com/sgd-node/>
-
 - EMAMPLE: Hansel Heidelberg
 - analyst.alias ::[H1He2]
 ::::::::::::::::::::::<br>
