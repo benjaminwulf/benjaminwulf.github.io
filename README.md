@@ -19,7 +19,6 @@ More information available:
 
 - EMAMPLE: Hansel Heidelberg
 - analyst.alias ::[H1He2]
-
 ::::::::::::::::::::::<br>
 ::HEXVAL__:::<br>
 ::FD7A00AA::<br>
@@ -28,7 +27,6 @@ More information available:
 ::======__:::<br>
 ::Fe8000Aa:::<br>
 ::::::::::::::::::::::<br>
-<br>
 ### Create your character HEX-VAL...<br>
 ### SELECT between 0x0-0xD:<br>
 #ffffff [  ] wht<br>
@@ -44,7 +42,6 @@ More information available:
 #ffc0cb [  ] very lt pink<br>
 #663300 [  ] dk shade of brown<br>
 #000000 [  ] black<br>
-
 ### NODE<br>
 ### SELECT your origin node [MAX of two ICANN sub region topology]:<br>
 .red   [  ] ARIN (NA)<br>
@@ -52,12 +49,10 @@ More information available:
 .blue  [  ] RIPENCC (UK, EU, RUSSIA, CHINA, KOREA, JAPAN)<br>
 .pink  [  ] APNIC (OCEANA)<br>
 .black [  ] LACNIC (MEXICO, LATIN AMERICA, SA)<br>
-
 ### Choose (1) emoji icon with shortcode, codepoint unicode, or draw/describe (we will do out best to accomodate).
 ### Exmple:
 :shell: <br>
 U+1F41A <br>
-
 # RANK-AND-FILE<br>
 More information available:<br>
 <https://gitlab.com/sgd-pt/schema/><br>
