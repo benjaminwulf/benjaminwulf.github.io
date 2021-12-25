@@ -14,8 +14,6 @@
 ### SGD[NODE] RPG
 SGD[node].rgp
 
-### ::[writing the future(s)...]
-
 ### HEX-VAL-QUOTIENT
 More information available:
 <https://gitlab.com/sgd-node/>
@@ -31,11 +29,9 @@ More information available:
 ::======__:::<br>
 ::Fe8000Aa:::<br>
 ::::::::::::::::::::::<br>
-
 <br>
 ### Create your character HEX-VAL...<br>
 ### SELECT between 0x0-0xD:<br>
-
 #ffffff [  ] wht<br>
 #ffff00 [  ] canary-yel<br>
 #ff0000 [  ] red<br>
@@ -58,6 +54,10 @@ More information available:
 .pink  [  ] APNIC (OCEANA)<br>
 .black [  ] LACNIC (MEXICO, LATIN AMERICA, SA)<br>
 
+### Choose (1) emoji icon with shortcode, codepoint unicode, or draw/describe (we will do out best to accomodate).
+### Exmple:
+:shell: <br>
+U+1F41A <br>
 # RANK-AND-FILE<br>
 More information available:<br>
 <https://gitlab.com/sgd-pt/schema/><br>
