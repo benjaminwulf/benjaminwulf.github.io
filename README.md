@@ -22,8 +22,7 @@ More information available:
 ::======__:::<br>
 ::Fe8000Aa:::<br>
 ::::::::::::::::::::::<br>
-### Create your character HEX-VAL...<br>
-### SELECT between 0x0-0xD:<br>
+### SELECT btw 0x0-0xD for character HEX-VAL-QUOTIENT.
 #ffffff [  ] wht<br>
 #ffff00 [  ] canary-yel<br>
 #ff0000 [  ] red<br>
@@ -37,8 +36,7 @@ More information available:
 #ffc0cb [  ] very lt pink<br>
 #663300 [  ] dk shade of brown<br>
 #000000 [  ] black<br>
-### NODE<br>
-### SELECT your origin node [MAX of two ICANN sub region topology]:<br>
+### SELECT origin NODE [MAX of two ICANN sub region topology]:<br>
 .red   [  ] ARIN (NA)<br>
 .green [  ] AFRINIC (Africa)<br>
 .blue  [  ] RIPENCC (UK, EU, RUSSIA, CHINA, KOREA, JAPAN)<br>
