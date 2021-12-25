@@ -1,21 +1,22 @@
-###### SITE
+# WELCOME TO SGD.vin
+### Here you can submit request for UID inside NFT gaming platform...
+### All request e-mail to:
+<inquiry@frontrnagecomics.com>
 
+# 🌀 FRONT RANGE COMICS
+### SITE
 <http://frontrangecomics.com/>
 
-###### SERVICE
-
+# 🐚 SHELL GAMING DOMINION
+### SERVICE
 <http://shellgamingdominion.com/>
 
-###### SGD[NODE]
-
-🌀 FRONT RANGE COMICS
-🐚 SHELL GAMING DOMINION
-
+### SGD[NODE] RPG
 SGD[node].rgp
 
-::[writing the future(s)...]
+### ::[writing the future(s)...]
 
-# HEX-VAL-QUOTIENT
+### HEX-VAL-QUOTIENT
 More information available:
 <https://gitlab.com/sgd-node/>
 
@@ -30,9 +31,11 @@ More information available:
 ::======__:::<br>
 ::Fe8000Aa:::<br>
 ::::::::::::::::::::::<br>
+
 <br>
-# HEX-VAL<br>
-# SELECT between 0x0-0xD:<br>
+### Create your character HEX-VAL...<br>
+### SELECT between 0x0-0xD:<br>
+
 #ffffff [  ] wht<br>
 #ffff00 [  ] canary-yel<br>
 #ff0000 [  ] red<br>
@@ -47,8 +50,8 @@ More information available:
 #663300 [  ] dk shade of brown<br>
 #000000 [  ] black<br>
 
-# NODE<br>
-### SELECT your origin node [MAX of two]:<br>
+### NODE<br>
+### SELECT your origin node [MAX of two ICANN sub region topology]:<br>
 .red   [  ] ARIN (NA)<br>
 .green [  ] AFRINIC (Africa)<br>
 .blue  [  ] RIPENCC (UK, EU, RUSSIA, CHINA, KOREA, JAPAN)<br>
