@@ -22,9 +22,9 @@ More information available:
 - EMAMPLE: Hansel Heidelberg
 - analyst.alias ::[H1He2]
 
-::::::::::::::::::::::::<br>
-::HEX-VAL__::::::<br>
-::FD7A00AA:::::::<br>
+::::::::::::::::::::::<br>
+::HEX-VAL__::<br>
+::FD7A00AA::<br>
 ::::::::::::::::::::::::<br>
 ::ff8800aa:::::::<br>
 ::=======__::::::<br>
