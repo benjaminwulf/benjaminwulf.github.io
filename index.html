@@ -16,7 +16,26 @@
   <title>SGD-MMRPG-beta</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  
+  <script src="jquery-1.4a2.min.js"></script>
+  <script>
+    function toggleEsc(show) {
+        $('.esc').toggle(show);
+    }
+
+    var oldCtrl = 'named';
+    function switchCtrl(newCtrl) {
+        $('.' + oldCtrl).hide();
+        $('.' + newCtrl).show();
+        oldCtrl = newCtrl;
+    }
+
+    var oldBase = 'dec';
+    function switchBase(newBase) {
+        $('.' + oldBase).hide();
+        $('.' + newBase).show();
+        oldBase = newBase;
+    }
+  </script>
   
 <style>
 body {
@@ -821,17 +840,16 @@ li#Key {
   }
 }
 </style>
-
 </head>
   
 <body translate="no" class="calibre" amzn-src-id="18" >
 <header>
-  <a href="sgd-logo.png"><img src="img/sgd-logo.png" alt="SGD logo" style="width:240px"></a>
+  <a href="ascii.html"><img src="img/sgd-logo.png" alt="SGD logo" style="width:240px"></a>
+  <h1>Click above to toggle view</h1>
 </header>
 
 <main>
   <div id="Elements">
-  </div>
 </main>
 
 <div>
