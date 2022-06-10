@@ -1,0 +1,89 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata">
+    <dc:title>ShellGamingDominion-vol.1-super-dulux</dc:title>
+    <dc:creator opf:role="aut" opf:file-as="WULF, BENJAMIN W.">BENJAMIN W. WULF</dc:creator>
+    <dc:contributor opf:role="bkp">calibre (5.43.0) [https://calibre-ebook.com]</dc:contributor>
+    <dc:date>2022-06-09T23:26:22+00:00</dc:date>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">9bb83efb-6edf-4fdb-9236-84f9b2322191</dc:identifier>
+    <dc:publisher>Front Range Comics</dc:publisher>
+    <dc:subject>shell gaming dominion neuro comic graphic novel periodic table h1he2 hgo rb37 rn86 cf98</dc:subject>
+    <dc:language>en</dc:language>
+    <dc:identifier opf:scheme="calibre">9bb83efb-6edf-4fdb-9236-84f9b2322191</dc:identifier>
+    <meta name="calibre:timestamp" content="2022-06-10T04:37:40.708876+00:00"/>
+    <meta name="calibre:title_sort" content="ShellGamingDominion-vol.1-super-dulux"/>
+    <meta name="calibre:series" content="1"/>
+    <meta name="calibre:series_index" content="1.0"/>
+    <meta name="cover" content="cover"/>
+    <meta name="calibre:author_link_map" content="{&quot;BENJAMIN W. WULF&quot;: &quot;&quot;}"/>
+  </metadata>
+  <manifest>
+    <item id="titlepage" href="titlepage.xhtml" media-type="application/xhtml+xml"/>
+    <item id="id1" href="index.html" media-type="application/xhtml+xml"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+    <item id="page_css" href="page_styles.css" media-type="text/css"/>
+    <item id="css" href="stylesheet.css" media-type="text/css"/>
+    <item id="cover" href="cover.jpeg" media-type="image/jpeg"/>
+    <item id="id31" href="index-1_1.png" media-type="image/png"/>
+    <item id="id28" href="index-10_1.png" media-type="image/png"/>
+    <item id="id12" href="index-11_1.png" media-type="image/png"/>
+    <item id="id25" href="index-12_1.png" media-type="image/png"/>
+    <item id="id14" href="index-13_1.png" media-type="image/png"/>
+    <item id="id17" href="index-14_1.png" media-type="image/png"/>
+    <item id="id6" href="index-15_1.png" media-type="image/png"/>
+    <item id="id23" href="index-16_1.png" media-type="image/png"/>
+    <item id="id4" href="index-17_1.png" media-type="image/png"/>
+    <item id="id41" href="index-18_1.png" media-type="image/png"/>
+    <item id="id52" href="index-19_1.png" media-type="image/png"/>
+    <item id="id43" href="index-2_1.png" media-type="image/png"/>
+    <item id="id46" href="index-20_1.png" media-type="image/png"/>
+    <item id="id29" href="index-21_1.png" media-type="image/png"/>
+    <item id="id45" href="index-22_1.png" media-type="image/png"/>
+    <item id="id35" href="index-23_1.png" media-type="image/png"/>
+    <item id="id51" href="index-24_1.png" media-type="image/png"/>
+    <item id="id42" href="index-25_1.png" media-type="image/png"/>
+    <item id="id53" href="index-26_1.png" media-type="image/png"/>
+    <item id="id36" href="index-27_1.png" media-type="image/png"/>
+    <item id="id7" href="index-28_1.png" media-type="image/png"/>
+    <item id="id16" href="index-29_1.png" media-type="image/png"/>
+    <item id="id33" href="index-3_1.png" media-type="image/png"/>
+    <item id="id19" href="index-30_1.png" media-type="image/png"/>
+    <item id="id10" href="index-31_1.png" media-type="image/png"/>
+    <item id="id22" href="index-32_1.png" media-type="image/png"/>
+    <item id="id2" href="index-33_1.png" media-type="image/png"/>
+    <item id="id27" href="index-34_1.png" media-type="image/png"/>
+    <item id="id11" href="index-35_1.png" media-type="image/png"/>
+    <item id="id26" href="index-36_1.png" media-type="image/png"/>
+    <item id="id15" href="index-37_1.png" media-type="image/png"/>
+    <item id="id32" href="index-38_1.png" media-type="image/png"/>
+    <item id="id47" href="index-39_1.png" media-type="image/png"/>
+    <item id="id49" href="index-4_1.png" media-type="image/png"/>
+    <item id="id30" href="index-40_1.png" media-type="image/png"/>
+    <item id="id48" href="index-41_1.png" media-type="image/png"/>
+    <item id="id34" href="index-42_1.png" media-type="image/png"/>
+    <item id="id44" href="index-43_1.png" media-type="image/png"/>
+    <item id="id39" href="index-44_1.jpg" media-type="image/jpeg"/>
+    <item id="id50" href="index-45_1.jpg" media-type="image/jpeg"/>
+    <item id="id37" href="index-46_1.jpg" media-type="image/jpeg"/>
+    <item id="id55" href="index-47_1.jpg" media-type="image/jpeg"/>
+    <item id="id20" href="index-48_1.jpg" media-type="image/jpeg"/>
+    <item id="id9" href="index-49_1.jpg" media-type="image/jpeg"/>
+    <item id="id40" href="index-5_1.png" media-type="image/png"/>
+    <item id="id5" href="index-50_1.jpg" media-type="image/jpeg"/>
+    <item id="id18" href="index-51_1.jpg" media-type="image/jpeg"/>
+    <item id="id3" href="index-52_1.jpg" media-type="image/jpeg"/>
+    <item id="id24" href="index-53_1.jpg" media-type="image/jpeg"/>
+    <item id="id13" href="index-54_1.png" media-type="image/png"/>
+    <item id="id54" href="index-6_1.png" media-type="image/png"/>
+    <item id="id38" href="index-7_1.png" media-type="image/png"/>
+    <item id="id8" href="index-8_1.png" media-type="image/png"/>
+    <item id="id21" href="index-9_1.png" media-type="image/png"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="titlepage"/>
+    <itemref idref="id1"/>
+  </spine>
+  <guide>
+    <reference type="cover" href="titlepage.xhtml" title="Cover"/>
+  </guide>
+</package>
